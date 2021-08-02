@@ -1,15 +1,21 @@
+import ListSearch from "../MovieDisplay/karim";
+import MovieDisplay from "../MovieDisplay/MovieDisplay";
+
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <h1>Test</h1>
-      </header>
+	return (
+		<div className="App">
+			<header>
+				<h1>Quick Flick Picker</h1>
+			</header>
 
-      <main></main>
+			<main>
+				{/* <MovieDisplay /> */}
+				<ListSearch/>
+			</main>
 
-      <footer></footer>
-    </div>
-  );
+			<footer></footer>
+		</div>
+	);
 }
 
 export default App;
