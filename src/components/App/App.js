@@ -1,3 +1,5 @@
+import MainPage from "../MainPage/MainPage";
+
 function App() {
   return (
     <div className="App">
@@ -5,7 +7,9 @@ function App() {
         <h1>Test</h1>
       </header>
 
-      <main></main>
+      <main>
+        <MainPage />
+      </main>
 
       <footer></footer>
     </div>
