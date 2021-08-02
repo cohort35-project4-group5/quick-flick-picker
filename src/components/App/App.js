@@ -1,15 +1,10 @@
-function App() {
+import ListSearch from '../ListSearch/ListSearch'
+
+
+const App = function(){
   return (
-    <div className="App">
-      <header>
-        <h1>Test</h1>
-      </header>
-
-      <main></main>
-
-      <footer></footer>
-    </div>
-  );
+  <ListSearch/>
+  )
 }
 
 export default App;
