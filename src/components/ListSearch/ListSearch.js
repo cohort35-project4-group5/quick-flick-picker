@@ -36,7 +36,6 @@ function ListSearch() {
         url: `https://api.themoviedb.org/3/movie/`,
         params: {
           key: apiKey,
-          // pass in key from firebase list as movie_id parameter
           movie_id: movie.id,
         },
       }).then((res) => {
@@ -46,14 +45,26 @@ function ListSearch() {
     });
   }, []);
 
+  const [userChoice, setUserChoice] = useState("placeholder");
+  // Event listener - when user selects from the dropdown, update userChoice state to the value
+  const handleUserChoice = (e) => {
+    setUserChoice(e.target.value);
+  };
+  // Event listener - when user submits the form, call filterPhotos (created at App.js) function to filter the photos and updated the filteredPhotos state on the parent App component, so the page will reflect
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submittt!!");
+    filterList(userChoice);
+  };
+
   return (
     <div className="searchBox">
-      <form>
+      <form onSubmit={handleSubmit}>
         {movies.map(function (movie) {
           return <li>{movie}</li>;
         })}
         <label for="movieList">Choose Your Movie from</label>
-        <select id="TimeOptions" name="Movies">
+        <select id="TimeOptions" name="Movies" onChange={handleUserChoice}>
           <option value="time1">Option</option>
           <option value="time2">Option</option>
           <option value="time3">Option</option>
