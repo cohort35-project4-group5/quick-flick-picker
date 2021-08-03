@@ -1,11 +1,13 @@
+import MainPage from "../MainPage/MainPage";
+
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Test</h1>
-      </header>
+      <header></header>
 
-      <main></main>
+      <main>
+        <MainPage />
+      </main>
 
       <footer></footer>
     </div>
