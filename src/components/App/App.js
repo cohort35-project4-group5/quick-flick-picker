@@ -1,8 +1,7 @@
 
-// import SetList from "../SetList/SetList";
-// import MovieCardDisplay from "../SetList/SetList";
-// import ListSearch from "../ListSearch/ListSearch";
-// import MainPage from "../MainPage/MainPage";
+import SetList from "../SetList/SetList";
+import MovieDisplay from "../MovieDisplay/MovieDisplay"
+import MainPage from "../MainPage/MainPage";
 import ListModal from "../ListModal/ListModal";
 
 function App() {
@@ -13,9 +12,9 @@ function App() {
 			</header>
 
 			<main>
-				{/* <MovieDisplay /> */}
-        {/* <MainPage /> */}
-				{/* <SetList/> */}
+				<MovieDisplay />
+        <MainPage />
+				<SetList/>
         <ListModal />
 			</main>
 
