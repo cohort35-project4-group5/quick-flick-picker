@@ -1,5 +1,8 @@
+
 import SetList from "../SetList/SetList";
+import MovieDisplay from "../MovieDisplay/MovieDisplay"
 import MainPage from "../MainPage/MainPage";
+import ListModal from "../ListModal/ListModal";
 
 function App() {
 	return (
@@ -9,9 +12,10 @@ function App() {
 			</header>
 
 			<main>
-				{/* <MovieDisplay /> */}
-				<MainPage />
-				<SetList />
+				<MovieDisplay />
+        <MainPage />
+				<SetList/>
+        <ListModal />
 			</main>
 
 			<footer></footer>
