@@ -28,11 +28,11 @@ const MainPage = () => {
         },
       }).then((res) => {
         console.log(res.data.results);
-        const movieIdArray = res.data.results.map((movieObj) => {
-          return movieObj.id;
-        });
-        console.log(movieIdArray);
-        setMoviesArray(movieIdArray);
+        // const movieIdArray = res.data.results.map((movieObj) => {
+        //   return movieObj.id;
+        // });
+        // console.log(movieIdArray);
+        setMoviesArray(res.data.results);
       });
     }
   }, [userInput]);
@@ -51,7 +51,6 @@ const MainPage = () => {
         };
         moviesArray.push(itemObj);
       }
-      console.log(moviesArray);
       setMovieLists(moviesArray);
     });
   }, []);
@@ -63,8 +62,10 @@ const MainPage = () => {
   return (
     <div className="mainPage">
       <MovieSearchBar getUserInput={getUserInput} />
-      <SearchedMoviesList moviesArray={moviesArray} movieLists={movieLists} />
-      <UserMovieLists movieLists={movieLists} />
+      <section className="mainPageFlexContainer">
+        <SearchedMoviesList moviesArray={moviesArray} movieLists={movieLists} />
+        <UserMovieLists movieLists={movieLists} />
+      </section>
     </div>
   );
 };
