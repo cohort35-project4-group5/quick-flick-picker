@@ -11,10 +11,16 @@
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-icons": "^4.2.0",
     "react-scripts": "4.0.3",
     "sass": "^1.36.0",
     "sweetalert2": "^11.1.2",
+=======
+    "react-player": "^2.9.0",
+    "react-scripts": "4.0.3",
+    "sweetalert2": "^11.1.0",
+>>>>>>> 0b1d39efa579864d37318191bef43776a5b51f2b
     "web-vitals": "^1.0.1"
   },
   "scripts": {

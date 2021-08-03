@@ -68,7 +68,7 @@ function ListModal() {
         dbRef.on('value', (snapshot) => {
             const myData = snapshot.val();
             for (let propertyName in myData) {
-                if (userInput === myData[propertyName].listName) {
+                if (userInput == myData[propertyName].listName) {
                     errorHandling2();
                 } else if (userInput !=="") {
                     errorHandling1();
