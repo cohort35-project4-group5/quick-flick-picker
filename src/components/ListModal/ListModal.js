@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import firebase from '../../firebase';
-import { AiFillCloseCircle } from "react-icons/ai"
+import { AiFillCloseCircle } from 'react-icons';
 import Swal from 'sweetalert2';
 
 function ListModal() {
