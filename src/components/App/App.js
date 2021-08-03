@@ -1,7 +1,4 @@
-
 import SetList from "../SetList/SetList";
-import MovieCardDisplay from "../SetList/SetList";
-import ListSearch from "../ListSearch/ListSearch";
 import MainPage from "../MainPage/MainPage";
 
 function App() {
@@ -13,8 +10,8 @@ function App() {
 
 			<main>
 				{/* <MovieDisplay /> */}
-        <Movie />
-				<SetList/>
+				<MainPage />
+				<SetList />
 			</main>
 
 			<footer></footer>
