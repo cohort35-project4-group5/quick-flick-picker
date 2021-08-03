@@ -1,5 +1,6 @@
-import ListSearch from "../MovieDisplay/karim";
-import MovieDisplay from "../MovieDisplay/MovieDisplay";
+import SetList from "../SetList/SetList";
+import MovieCardDisplay from "../SetList/SetList";
+import ListSearch from "../ListSearch/ListSearch";
 
 function App() {
 	return (
@@ -10,7 +11,8 @@ function App() {
 
 			<main>
 				{/* <MovieDisplay /> */}
-				<ListSearch/>
+
+				<SetList/>
 			</main>
 
 			<footer></footer>
