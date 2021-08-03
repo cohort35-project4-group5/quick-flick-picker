@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-import ListSearch from '../ListSearch/ListSearch'
+import ListSearch from "../ListSearch/ListSearch";
 
-=======
 import MainPage from "../MainPage/MainPage";
 
 function App() {
@@ -12,12 +10,7 @@ function App() {
       <main>
         <MainPage />
       </main>
->>>>>>> 5bbe8319a7e7b3784a448bbcfb8d80d2dac46014
-
-const App = function(){
-  return (
-  <ListSearch/>
-  )
+    </div>
+  );
 }
-
 export default App;
