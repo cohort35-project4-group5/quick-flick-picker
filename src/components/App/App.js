@@ -13,9 +13,9 @@ function App() {
 
       <main>
         {/* <MovieDisplay /> */}
-        <MainPage />
+        {/* <MainPage /> */}
         <SetList />
-        <ListModal />
+        {/* <ListModal /> */}
       </main>
 
       <footer></footer>
