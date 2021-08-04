@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import firebase from '../../firebase';
-import { AiFillCloseCircle } from 'react-icons';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 
 function ListModal() {
@@ -60,31 +60,48 @@ function ListModal() {
       // To handle the button when it is clicked on the button
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Checking if user did not put anything for listname 
-        if ( userInput !== "") {
+        let check = "false";
+
         // We create a reference to our Firebase database:
         const dbRef = firebase.database().ref();
+        // Create variable to see if the List Name is in the database
+
         // Checking if user input already had in the database
         dbRef.on('value', (snapshot) => {
             const myData = snapshot.val();
             for (let propertyName in myData) {
-                if (userInput == myData[propertyName].listName) {
-                    errorHandling2();
-                } else if (userInput !=="") {
-                    errorHandling1();
-                } 
-                else {
-                    const userInputItem = {
-                        listName: userInput,
-                        movieList: {},
-                    }
-                    dbRef.push(userInputItem);
-                    setUserInput("");
+                
+                const listObject = {
+                    key:propertyName,
+                    listName: myData[propertyName].listName,
                 }
+
+                // Checking if its out there
+                if (userInput === listObject.listName) {
+                    check = "true";
+                    break;
+                }
+
             };
+        })
+
+        const userInputItem = {
+            listName: userInput,
+            movieList:{}
         }
-    )}
-}
+
+        if (check !== "true" && userInput !=="") {
+            dbRef.push(userInputItem);
+            setUserInput("");
+        }
+        else if (userInput == "") {
+            errorHandling1();
+        } else {
+            errorHandling2();
+            setUserInput("");
+        }
+    }
+
 
     
     // To Handle the delete when the delete button clicked on the button
