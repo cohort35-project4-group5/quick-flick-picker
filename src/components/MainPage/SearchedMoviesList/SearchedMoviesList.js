@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import MovieDisplay from "../../MovieDisplay/MovieDisplay";
 import firebase from "../../../firebase";
 
+import ListModal from "../../ListModal/ListModal";
+
 const SearchedMoviesList = (props) => {
   const [selectedList, setSelectedList] = useState("");
   const [selectedMovie, setSelectedMovie] = useState("");
@@ -12,9 +14,9 @@ const SearchedMoviesList = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const dbRef = firebase.database().ref();
     if (selectedList !== "") {
-      console.log(selectedList, selectedMovie);
+      dbRef.child(selectedList).child("movieList").push(selectedMovie);
     }
   };
 
@@ -36,7 +38,7 @@ const SearchedMoviesList = (props) => {
         <div className="movieDetailsContainer">
           <div>
             <MovieDisplay movieID={selectedMovie} />
-            {/* <p>Display Movie ID: {selectedMovie}</p> */}
+
             <form
               className="addMovieForm"
               action="submit"
@@ -58,7 +60,7 @@ const SearchedMoviesList = (props) => {
                 </option>
                 {props.movieLists.map((movieList, i) => {
                   return (
-                    <option key={i} value={movieList}>
+                    <option key={i} value={movieList.key}>
                       {movieList.listName}
                     </option>
                   );
