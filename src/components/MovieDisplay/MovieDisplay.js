@@ -26,9 +26,9 @@ import Swal from "sweetalert2";
 // import ReactPlayer from "react-player"
 import ReactPlayer from "react-player";
 
-const MovieDisplay = () => {
+const MovieDisplay = (props) => {
 	// userChoice will be assigned from movie ID from search bar on main page or from a click on movie thumbnail in list display frame
-	const [movieID, setMovieID] = useState(435);
+	const [movieID, setMovieID] = useState(props.movieID);
 	const [movieDetails, setMovieDetails] = useState([]);
 	const [trailerDetails, setTrailerDetails] = useState([]);
 	const [cast, setCast] = useState([]);
@@ -50,7 +50,7 @@ const MovieDisplay = () => {
 	// Axios call to get movie details
 
 	useEffect(() => {
-		setMovieID(440);
+		setMovieID(props.movieID);
 		axios({
 			url: baseURL,
 			params: {
@@ -60,10 +60,10 @@ const MovieDisplay = () => {
 			.then((res) => {
 				setMovieDetails(res.data);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -75,10 +75,10 @@ const MovieDisplay = () => {
 			.then((res) => {
 				setTrailerDetails(res.data.results[0]);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -91,12 +91,12 @@ const MovieDisplay = () => {
 				setCast(res.data.cast);
 				setCrew(res.data.crew);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
-	console.log(movieDetails, trailerDetails, cast, crew);
+	// console.log(movieDetails, trailerDetails, cast, crew);
 
 	// Destructuring movieDetails object to display relevant information
 	const { title, imdb_id, overview, poster_path } = movieDetails;
@@ -106,10 +106,8 @@ const MovieDisplay = () => {
 	for (const genre in movieDetails.genres) {
 		genres.push(movieDetails.genres[genre].name);
 	}
-	console.log(genres);
 
 	// Setting trailerID to display relevant information
-	console.log(trailerDetails.key);
 	const trailerKey = trailerDetails.key;
 
 	// Destructuring movieCredits object to display relevant information
@@ -140,7 +138,7 @@ const MovieDisplay = () => {
 				<p>{genres.join(", ")}</p>
 				<p>Main Cast: {actors.join(", ")}</p>
 				<p>Director: {directors[0]}</p>
-				<a href={`https://www.imdb.com/title/${imdb_id}`}>On IMBD</a>
+				<a href={`https://www.imdb.com/title/${imdb_id}`}>On IMDB</a>
 			</div>
 		</div>
 	);

@@ -8,9 +8,12 @@ import Swal from "sweetalert2";
 import MovieCardDisplay from "./MovieCardDisplay.jsx";
 import "./SetList.css";
 import ListSearch from "../ListSearch/ListSearch.jsx";
+import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
 
 const SetList = () => {
 	const [list, setList] = useState([]);
+	const [matchedMovie, setMatchedMovie] = useState("");
+	const [newSearch, setNewSearch] = useState(false);
 
 	// Get list from main page list of lists, pass as a prop
 	const selectedList = "Oscar";
@@ -72,7 +75,7 @@ const SetList = () => {
 			}
 		});
 	}, [list]);
-	
+
 	const genres = [];
 	movieData.map((i) => {
 		genres.push(i.genres);
@@ -85,21 +88,43 @@ const SetList = () => {
 	});
 	// console.log(runTimes);
 
+	const returnValue = (value) => {
+		setMatchedMovie(value);
+		setNewSearch(true);
+	};
+	console.log(matchedMovie);
+
+	// useEffect = (()=>{
+
+	// },[matchedMovie])
+
 	return (
 		<div className="wrapper">
-			<ListSearch genres={genres} runTimes={runTimes}/>
-			<h2>{selectedList}</h2>
-			<div className="posterContainer">
-				{movieData.map((i) => {
-					return (
-						<MovieCardDisplay
-							posterPath={i.poster_path}
-							altText={i.title}
-							key={i.id}
-						/>
-					);
-				})}
-			</div>
+			<ListSearch
+				genres={genres}
+				runTimes={runTimes}
+				ids={IDArray}
+				returnValue={returnValue}
+			/>
+
+			{newSearch === false ? (
+				<div className="listMovies">
+					<h2>{selectedList}</h2>
+					<div className="posterContainer">
+						{movieData.map((i) => {
+							return (
+								<MovieCardDisplay
+									posterPath={i.poster_path}
+									altText={i.title}
+									key={i.id}
+								/>
+							);
+						})}
+					</div>
+				</div>
+			) : (
+				<MovieDisplay movieID={matchedMovie} />
+			)}
 		</div>
 	);
 };
