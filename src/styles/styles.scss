@@ -1,3 +1,20 @@
 @import "../components/MainPage/MainPage";
 @import "../components/MainPage/SearchedMoviesList/SearchedMovieList";
 @import "../components/MainPage/UserMovieLists/UserMovieLists";
+@import "../components/ListModal/ListModal";
+@import "../styles/partials/fonts";
+
+html {
+    background-color: $backgroundColor;
+    font-family: $bodyFont;
+    margin: 10px;
+}
+.App {   
+    color: $whiteColor;
+}
+
+h1 {
+    font-weight: 700;
+    font-family: $headerFont;
+    color: $redColor;
+}

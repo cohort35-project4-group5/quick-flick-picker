@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import firebase from '../../firebase';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { AiOutlineCloseCircle , AiFillPlusCircle } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 
 function ListModal() {
@@ -94,7 +94,7 @@ function ListModal() {
             dbRef.push(userInputItem);
             setUserInput("");
         }
-        else if (userInput == "") {
+        else if (userInput === "") {
             errorHandling1();
         } else {
             errorHandling2();
@@ -112,17 +112,17 @@ function ListModal() {
     }
     
     return (
-        <div className="ListModal">
-        <h2> </h2>    
-        <ul className="listTitle">
+        <div className="listModal">
+        <h2>Select a list </h2>    
+        <ul className="listtitle-container">
         {
             selectedList.map( (listObject) => {
             const defferedFunction = () => handleDelete(listObject.key);
             return (
                 <li key={listObject.key}>
-                    <div>
-                        <p>{listObject.listName}</p>
-                        <button onClick={defferedFunction}> <AiFillCloseCircle/></button>
+                    <div className="addlist-container">
+                        <p className ="listTitle">{listObject.listName}</p>
+                        <button className ="deleteBtn" onClick={defferedFunction}> <AiOutlineCloseCircle/></button>
                     </div> 
                 </li>
                 )
@@ -131,14 +131,16 @@ function ListModal() {
         </ul>
 
         {/* Form for User to add additional List title  */}
-        <form action="submit" onSubmit={handleSubmit}>
-            <label htmlFor="userListChoice">Create a new list </label>
+        <form className = "addlist-form"action="submit" onSubmit={handleSubmit}>
+            <label className="labelForList" htmlFor="userListChoice">Create a new list </label>
+            <div>
             <input 
             type="text"
             id="userListChoice" 
             onChange={handleChange}
             value={userInput} />
-            <button> Add it!</button>
+            <button className="addItemBtn"> <AiFillPlusCircle/> </button>
+            </div>
         </form>
 
         </div>
