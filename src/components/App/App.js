@@ -1,5 +1,5 @@
 import SetList from "../SetList/SetList";
-import MovieDisplay from "../MovieDisplay/MovieDisplay";
+// import MovieDisplay from "../MovieDisplay/MovieDisplay";
 import MainPage from "../MainPage/MainPage";
 import ListModal from "../ListModal/ListModal";
 
