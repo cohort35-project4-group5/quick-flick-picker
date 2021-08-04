@@ -89,7 +89,6 @@ const SetList = () => {
 	// console.log(runTimes);
 
 	const returnValue = (value) => {
-		console.log(value);
 		setMatchedMovie(value);
 		setNewSearch(true);
 	};

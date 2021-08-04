@@ -28,7 +28,7 @@ import ReactPlayer from "react-player";
 
 const MovieDisplay = (props) => {
 	// userChoice will be assigned from movie ID from search bar on main page or from a click on movie thumbnail in list display frame
-	const [movieID, setMovieID] = useState(0);
+	const [movieID, setMovieID] = useState(props.movieID);
 	const [movieDetails, setMovieDetails] = useState([]);
 	const [trailerDetails, setTrailerDetails] = useState([]);
 	const [cast, setCast] = useState([]);
@@ -60,10 +60,10 @@ const MovieDisplay = (props) => {
 			.then((res) => {
 				setMovieDetails(res.data);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -75,10 +75,10 @@ const MovieDisplay = (props) => {
 			.then((res) => {
 				setTrailerDetails(res.data.results[0]);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -91,10 +91,10 @@ const MovieDisplay = (props) => {
 				setCast(res.data.cast);
 				setCrew(res.data.crew);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	// console.log(movieDetails, trailerDetails, cast, crew);
 
