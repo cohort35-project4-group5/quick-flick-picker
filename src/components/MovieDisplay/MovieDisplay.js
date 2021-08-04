@@ -60,10 +60,10 @@ const MovieDisplay = (props) => {
 			.then((res) => {
 				setMovieDetails(res.data);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -75,10 +75,10 @@ const MovieDisplay = (props) => {
 			.then((res) => {
 				setTrailerDetails(res.data.results[0]);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	useEffect(() => {
 		axios({
@@ -91,10 +91,10 @@ const MovieDisplay = (props) => {
 				setCast(res.data.cast);
 				setCrew(res.data.crew);
 			})
-			.catch(() => {
-				errorHandling();
+			.catch((e) => {
+				console.log(e);
 			});
-	}, [movieID]);
+	}, [props.movieID]);
 
 	// console.log(movieDetails, trailerDetails, cast, crew);
 
