@@ -7,10 +7,12 @@ import SearchedMoviesList from "./SearchedMoviesList/SearchedMoviesList";
 import UserMovieLists from "./UserMovieLists/UserMovieLists";
 
 const MainPage = () => {
-	const defaultMovieToShow = "";
-	const [userInput, setUserInput] = useState(defaultMovieToShow);
-	const [moviesArray, setMoviesArray] = useState([]);
-	const [movieLists, setMovieLists] = useState([]);
+
+  const defaultMovieToShow = "movie";
+  const [userInput, setUserInput] = useState(defaultMovieToShow);
+  const [moviesArray, setMoviesArray] = useState([]);
+  const [movieLists, setMovieLists] = useState([]);
+
 
 	useEffect(() => {
 		const apiKey = "b1d6597a25d870717493d54e43e127e0";

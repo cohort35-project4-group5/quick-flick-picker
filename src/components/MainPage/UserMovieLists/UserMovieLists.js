@@ -33,6 +33,7 @@ const UserMovieLists = (props) => {
 			)}
 		</div>
 	);
+
 };
 
 export default UserMovieLists;
