@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import MovieSearchBar from "../MainPage/MovieSearchBar/MovieSearchBar";
-import MovieDisplay from "../MovieDisplay/MovieDisplay";
+
 
 const ListSearch = (props) => {
 	const [genre, setGenre] = useState("Action");
@@ -21,26 +20,27 @@ const ListSearch = (props) => {
 	}
 
 	const errorHandling = () => {
+		let message =
+			"No movies match your search. Please try again!";
 		Swal.fire({
-			title: "Error!",
-			text: "No movies match your search. Please try again!",
+			background: "#242424",
 			icon: "error",
+			iconColor: "#e50914",
 			confirmButtonText: "OK",
+			confirmButtonColor: "#e50914",
+			allowEnterKey: true,
+			allowEscapeKey: true,
+			html:
+			// Change title to suit the application
+				"<div><h2 style='color:white;margin-bottom: 20px'>Error!</h2><p style='color:white'>" +
+				message +
+				"</p></div>",
 		});
 	};
 
 	const returnRandomMatchedMovie = (array) => {
 		return array[Math.floor(Math.random() * array.length)];
 	};
-
-	// If an object of info is needed...
-	// const dataArrays = idsArray.map((id, index) => {
-	// 	return {
-	// 		id: id,
-	// 		genres: genresArray[index],
-	// 		runTime: runTimesArray[index],
-	// 	};
-	// });
 
 	const handleGenreOption = (e) => {
 		setGenre(e.target.value);
@@ -81,7 +81,7 @@ const ListSearch = (props) => {
 	return (
 			<div className="searchBox">
 				<form onSubmit={handleSubmit}>
-					<label htmlFor="movieList">I want to watch a </label>
+					<label htmlFor="movieList">I'm in the mood for </label>
 					<select
 						id="genres"
 						name="genres"

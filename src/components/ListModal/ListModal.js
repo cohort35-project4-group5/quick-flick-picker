@@ -10,20 +10,40 @@ function ListModal() {
 
 	// Error handling for user input == ""
 	const errorHandling1 = () => {
+		let message =
+			"Please enter a name for your list before creating it!";
 		Swal.fire({
-			title: "Error!",
-			text: "Please add a list name",
+			background: "#242424",
 			icon: "error",
+			iconColor: "#e50914",
 			confirmButtonText: "OK",
+			confirmButtonColor: "#e50914",
+			allowEnterKey: true,
+			allowEscapeKey: true,
+			html:
+			// Change title to suit the application
+				"<div><h2 style='color:white;margin-bottom: 20px'>Error!</h2><p style='color:white'>" +
+				message +
+				"</p></div>",
 		});
 	};
 	// Error handling for user input that has the same list title before
 	const errorHandling2 = () => {
+		let message =
+			"A list with that name already exists. Please enter another name!";
 		Swal.fire({
-			title: "Error!",
-			text: "You already have that list",
+			background: "#242424",
 			icon: "error",
+			iconColor: "#e50914",
 			confirmButtonText: "OK",
+			confirmButtonColor: "#e50914",
+			allowEnterKey: true,
+			allowEscapeKey: true,
+			html:
+			// Change title to suit the application
+				"<div><h2 style='color:white;margin-bottom: 20px'>Error!</h2><p style='color:white'>" +
+				message +
+				"</p></div>",
 		});
 	};
 
@@ -89,7 +109,7 @@ function ListModal() {
 		if (check !== "true" && userInput !== "") {
 			dbRef.push(userInputItem);
 			setUserInput("");
-		} else if (userInput == "") {
+		} else if (userInput === "") {
 			errorHandling1();
 		} else {
 			errorHandling2();

@@ -29,6 +29,8 @@ function MovieCardDisplay(props) {
 		}
 	};
 
+	console.log(props)
+
 	return (
 		<div className="listPoster">
 			<div

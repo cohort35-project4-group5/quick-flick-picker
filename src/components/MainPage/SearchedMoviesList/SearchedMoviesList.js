@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import MovieDisplay from "../../MovieDisplay/MovieDisplay";
 import firebase from "../../../firebase";
 
-import ListModal from "../../ListModal/ListModal";
-
 const SearchedMoviesList = (props) => {
   const [selectedList, setSelectedList] = useState("");
   const [selectedMovie, setSelectedMovie] = useState("");
@@ -82,7 +80,6 @@ const SearchedMoviesList = (props) => {
               className="movieContainer"
               onClick={() => selectMovie(movieObj.id)}
             >
-              {/* <p>ID: {movieObj.id}</p> */}
               <div className="posterImg">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
