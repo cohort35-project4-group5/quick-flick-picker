@@ -94,10 +94,7 @@ const MovieDisplay = (props) => {
 	}
 
 	// Setting trailerID to display relevant information
-	let trailerKey = "";
-	if (trailerDetails !== undefined) {
-		trailerKey = trailerDetails.key;
-	}
+	const trailerKey = trailerDetails !== undefined ? trailerDetails.key : null;
 
 	// Destructuring movieCredits object to display relevant information
 	const actorsObject = cast.slice(0, 5);
@@ -112,7 +109,7 @@ const MovieDisplay = (props) => {
 			directors.push(crew[role].name);
 	}
 
-	return trailerDetails !== '' ? (
+	return trailerKey !== null ? (
 		<div className="poster">
 			<div className="description">
 				<h2>{title}</h2>
