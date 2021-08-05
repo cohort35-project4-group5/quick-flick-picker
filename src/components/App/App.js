@@ -5,7 +5,6 @@ import ListModal from "../ListModal/ListModal";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <Router>
       <div className="App">
@@ -14,12 +13,11 @@ function App() {
         </header>
         <main>
           <Route exact path="/" component={MainPage} />
-          <Route path="/list" component={SetList} />
+          <Route path="/list/:listname" component={SetList} />
         </main>
         <footer></footer>
       </div>
     </Router>
   );
-
-
+}
 export default App;

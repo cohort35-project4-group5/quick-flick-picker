@@ -24,7 +24,6 @@ const UserMovieLists = (props) => {
               </li>
             );
           })}
-          <Route path="/list/:listname" component={SetList} />
         </ul>
         <button onClick={openListManager}>Manage Lists</button>
       </div>
