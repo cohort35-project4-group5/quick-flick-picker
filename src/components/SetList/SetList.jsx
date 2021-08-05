@@ -5,6 +5,7 @@ import MovieCardDisplay from "./MovieCardDisplay.jsx";
 import ListSearch from "../ListSearch/ListSearch.jsx";
 import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
 import ReturnHome from "./ReturnHome.jsx";
+import { ImVideoCamera } from "react-icons/im";
 
 const SetList = (props) => {
 	const [list, setList] = useState([]);
@@ -43,8 +44,7 @@ const SetList = (props) => {
 		}
 	}
 	listToDisplay = listToDisplay.shift();
-	
-	
+
 	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
@@ -53,7 +53,7 @@ const SetList = (props) => {
 	IDArray = IDArray.filter((item, pos) => {
 		return IDArray.indexOf(item) === pos;
 	});
-	
+
 	useEffect(() => {
 		let movieObjectsArray = [];
 		const apiKey = "d29e1942e44de0965186873d8d6223e5";
@@ -94,11 +94,18 @@ const SetList = (props) => {
 				ids={IDArray}
 				returnValue={returnValue}
 			/>
-			<ReturnHome />
 
 			{newSearch === false ? (
 				<div className="listMovies">
-					<h2>{selectedList}</h2>
+					<h2>
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+						{selectedList}
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+					</h2>
 					<div className="posterContainer">
 						{movieData.map((i) => {
 							return (

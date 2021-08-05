@@ -34,6 +34,10 @@
 	border-radius: 5px;
 }
 
+.userMovieLists button:hover {
+	cursor: pointer;
+}
+
 .userMovieLists button:hover,
 .userMovieLists button:focus {
 	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);

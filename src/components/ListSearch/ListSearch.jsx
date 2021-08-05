@@ -71,7 +71,7 @@ const ListSearch = (props) => {
 	return (
 			<div className="searchBox">
 				<form onSubmit={handleSubmit}>
-					<label htmlFor="movieList">I want to watch a </label>
+					<label htmlFor="movieList">I'm in the mood for </label>
 					<select
 						id="genres"
 						name="genres"
@@ -81,7 +81,7 @@ const ListSearch = (props) => {
 							return <option key = {`genre${i}`} value={i}>{i}</option>;
 						})}
 					</select>
-					<label htmlFor="movieList"> movie and I have </label>
+					<label htmlFor="movieList"> and I have </label>
 					<select
 						id="runTimes"
 						name="runTimes"
