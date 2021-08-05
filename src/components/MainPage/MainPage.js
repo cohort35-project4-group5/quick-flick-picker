@@ -27,11 +27,6 @@ const MainPage = () => {
           query: userInput,
         },
       }).then((res) => {
-        console.log(res.data.results);
-        // const movieIdArray = res.data.results.map((movieObj) => {
-        //   return movieObj.id;
-        // });
-        // console.log(movieIdArray);
         setMoviesArray(res.data.results);
       });
     }
