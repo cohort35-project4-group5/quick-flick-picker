@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 function ListModal(props) {
   const [selectedList, setSelectedList] = useState([]);
   const [userInput, setUserInput] = useState("");
-  const [modalOpen, setModal] = useState(true);
 
   // Error handling for user input == ""
   const errorHandling1 = () => {

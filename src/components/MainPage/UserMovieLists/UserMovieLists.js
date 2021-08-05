@@ -15,8 +15,8 @@ const UserMovieLists = (props) => {
         <ul>
           {props.movieLists.map((movie, i) => {
             return (
-              <Link to={`/list/${movie.listName}`}>
-                <li key={i}>{movie.listName}</li>
+              <Link key={i} to={`/list/${movie.listName}`}>
+                <li>{movie.listName}</li>
               </Link>
             );
           })}
