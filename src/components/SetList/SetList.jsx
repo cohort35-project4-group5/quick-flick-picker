@@ -12,6 +12,7 @@ import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
 
 const SetList = () => {
 	const [list, setList] = useState([]);
+	const [listKey, setListKey] = useState("");
 	const [matchedMovie, setMatchedMovie] = useState("");
 	const [newSearch, setNewSearch] = useState(false);
 
@@ -46,10 +47,13 @@ const SetList = () => {
 		});
 	}, []);
 
+	// Figure out ListKey to pass listkey value to movieCardDisplay;
+	let targetKey = '';
 	let listToDisplay = [];
 	for (const item in list) {
 		if (list[item].listName === selectedList) {
 			listToDisplay.push(list[item].movieList);
+			targetKey = list[item].key;
 		}
 	}
 	listToDisplay = listToDisplay.shift();
@@ -80,23 +84,16 @@ const SetList = () => {
 	movieData.map((i) => {
 		genres.push(i.genres);
 	});
-	// console.log(genres);
 
 	const runTimes = [];
 	movieData.map((i) => {
 		runTimes.push(i.runtime);
 	});
-	// console.log(runTimes);
 
 	const returnValue = (value) => {
 		setMatchedMovie(value);
 		setNewSearch(true);
 	};
-	console.log(matchedMovie);
-
-	// useEffect = (()=>{
-
-	// },[matchedMovie])
 
 	return (
 		<div className="wrapper">
@@ -116,6 +113,9 @@ const SetList = () => {
 								<MovieCardDisplay
 									posterPath={i.poster_path}
 									altText={i.title}
+									selectedList={targetKey}
+									list={listToDisplay}
+									id={i.id}
 									key={i.id}
 								/>
 							);
