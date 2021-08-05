@@ -1,10 +1,6 @@
 import firebase from "../../firebase.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-// npm install sweetalert2
-// import Swal from 'sweetalert2'
-import Swal from "sweetalert2";
 import MovieCardDisplay from "./MovieCardDisplay.jsx";
 import ListSearch from "../ListSearch/ListSearch.jsx";
 import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
@@ -19,26 +15,6 @@ const SetList = (props) => {
 	const selectedList = props.match.params.listname;
 
 	const [movieData, setMovieData] = useState([]);
-
-	const errorHandling = () => {
-		// Change text to suit the response needed
-		let message =
-			"Your list is empty. Please add some movies to it on the home page!";
-		Swal.fire({
-			background: "#242424",
-			icon: "warning",
-			iconColor: "#e50914",
-			confirmButtonText: "OK",
-			confirmButtonColor: "#e50914",
-			allowEnterKey: true,
-			allowEscapeKey: true,
-			html:
-			// Change title to suit the application
-				"<div><h2 style='color:white;margin-bottom: 20px'>Heads Up!</h2><p style='color:white'>" +
-				message +
-				"</p></div>",
-		});
-	};
 
 	useEffect(function () {
 		const dbRef = firebase.database().ref();
@@ -57,7 +33,6 @@ const SetList = (props) => {
 		});
 	}, []);
 
-
 	// Figure out ListKey to pass listkey value to movieCardDisplay;
 	let targetKey = "";
 	let listToDisplay = [];
@@ -68,7 +43,8 @@ const SetList = (props) => {
 		}
 	}
 	listToDisplay = listToDisplay.shift();
-
+	
+	
 	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
@@ -94,8 +70,7 @@ const SetList = (props) => {
 			}
 		});
 	}, [list]);
-	
-	
+
 	const genres = [];
 	movieData.map((i) => {
 		return genres.push(i.genres);

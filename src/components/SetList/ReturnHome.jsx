@@ -3,10 +3,12 @@ import MainPage from "../MainPage/MainPage";
 
 const ReturnHome = () => {
 	return (
-		<div className="returnHome">
-			<Link to="/">Home</Link>
-			<Route exact path="/" component={MainPage} />
-		</div>
+		<Link to="/">
+			<div className="returnHome">
+				<p>Home</p>
+				<Route exact path="/" component={MainPage} />
+			</div>
+		</Link>
 	);
 };
 export default ReturnHome;

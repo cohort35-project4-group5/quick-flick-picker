@@ -7,7 +7,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<header>
-					<h1>Quick Flick Picker</h1>
+					<h1>QuickFlickPix</h1>
 				</header>
 				<main>
 					<Route exact path="/" component={MainPage} />
