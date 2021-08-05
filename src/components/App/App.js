@@ -13,8 +13,8 @@ function App() {
 
 			<main>
 				{/* <MovieDisplay /> */}
-				{/* <MainPage /> */}
-				<SetList />
+				<MainPage />
+				{/* <SetList /> */}
 				{/* <ListModal /> */}
 			</main>
 
