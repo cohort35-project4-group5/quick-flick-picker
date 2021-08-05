@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import firebase from "../../firebase";
 import { FaTimesCircle } from "react-icons/fa";
-
+import { AiFillPlusCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 function ListModal() {
@@ -115,7 +115,7 @@ function ListModal() {
 							<div className="addlist-container">
 								<p>{listObject.listName}</p>
 								<button onClick={defferedFunction}>
-									{" "}
+
 									<FaTimesCircle />
 								</button>
 							</div>
@@ -133,7 +133,7 @@ function ListModal() {
 					onChange={handleChange}
 					value={userInput}
 				/>
-				<button className="addItemBtn"> Add List </button>
+				<button className="addItemBtn"> <AiFillPlusCircle/> </button>
 			</form>
 		</div>
 	);
