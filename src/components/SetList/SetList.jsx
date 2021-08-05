@@ -44,6 +44,7 @@ const SetList = () => {
 				listObjects.push(listObject);
 			}
 			setList(listObjects);
+			console.log(listObjects);
 		});
 	}, []);
 
@@ -95,6 +96,7 @@ const SetList = () => {
 		setNewSearch(true);
 	};
 
+	console.log(movieData);
 	return (
 		<div className="wrapper">
 			<ListSearch

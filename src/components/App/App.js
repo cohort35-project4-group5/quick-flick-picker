@@ -10,6 +10,7 @@ function App() {
 				<h1>Quick Flick Picker</h1>
 			</header>
 
+
 			<main>
 				{/* <MovieDisplay /> */}
 				{/* <MainPage /> */}
