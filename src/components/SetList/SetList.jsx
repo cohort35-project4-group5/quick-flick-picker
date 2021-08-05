@@ -69,7 +69,7 @@ const SetList = (props) => {
 				setMovieData(movieObjectsArray);
 			}
 		});
-	}, [list]);
+	}, [IDArray, list]);
 
 	const genres = [];
 	movieData.map((i) => {
