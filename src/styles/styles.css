@@ -8,7 +8,6 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 70%;
   overflow: auto;
@@ -54,14 +53,13 @@ img {
 .listtitle-container {
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 25px;
   margin: 20px 5%;
 }
 
 .addlist-container {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
 }
 
 .addlist-container p {
@@ -70,6 +68,9 @@ img {
 }
 
 .deleteBtn {
+  position: absolute;
+  right: 10px;
+  top: 0;
   cursor: pointer;
   outline: none;
   background-color: #101011;
@@ -85,12 +86,14 @@ img {
 }
 
 .labelForList {
-  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin: 0 10px;
   margin-left: 45px;
 }
 
-input {
+.addlist-form input {
   margin-top: 20px;
   margin-left: 45px;
   border-radius: 10px;

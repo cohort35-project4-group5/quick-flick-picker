@@ -4,23 +4,23 @@ import MainPage from "../MainPage/MainPage";
 import ListModal from "../ListModal/ListModal";
 
 function App() {
-  return (
+return (
     <div className="App">
-      <header>
+    <header>
         <h1>Quick Flick Picker</h1>
-      </header>
+    </header>
 
 
-      <main>
+    <main>
         {/* <MovieDisplay /> */}
         {/* <MainPage /> */}
-        <SetList />
-        {/* <ListModal /> */}
-      </main>
+        {/* <SetList /> */}
+        <ListModal />
+    </main>
 
-      <footer></footer>
+    <footer></footer>
     </div>
-  );
+);
 }
 
 export default App;
