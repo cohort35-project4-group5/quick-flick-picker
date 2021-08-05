@@ -1,13 +1,12 @@
 import { useState } from "react";
 // import firebase from "../../../firebase";
 import ListModal from "../../ListModal/ListModal";
-import { Link, Route } from "react-router-dom";
-import SetList from "../../SetList/SetList";
+import { Link } from "react-router-dom";
 
 const UserMovieLists = (props) => {
   const [toggleModal, setToggleModal] = useState(false);
 
-  const openListManager = () => {
+  const toggleListManager = () => {
     setToggleModal(!toggleModal);
   };
 
@@ -25,12 +24,10 @@ const UserMovieLists = (props) => {
             );
           })}
         </ul>
-        <button onClick={openListManager}>Manage Lists</button>
+        <button onClick={toggleListManager}>Manage Lists</button>
       </div>
-      {toggleModal == true ? (
-        <div className="listModalContainer">
-          <ListModal />
-        </div>
+      {toggleModal === true ? (
+        <ListModal toggleListManager={toggleListManager} />
       ) : (
         <div></div>
       )}
