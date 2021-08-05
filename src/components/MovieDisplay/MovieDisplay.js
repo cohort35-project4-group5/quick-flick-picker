@@ -23,6 +23,7 @@ import axios from "axios";
 import ReactPlayer from "react-player";
 
 const MovieDisplay = (props) => {
+
 	// userChoice will be assigned from movie ID from search bar on main page or from a click on movie thumbnail in list display frame
 	const [movieID, setMovieID] = useState(props.movieID);
 	const [movieDetails, setMovieDetails] = useState([]);
