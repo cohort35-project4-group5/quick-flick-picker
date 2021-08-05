@@ -45,6 +45,7 @@ const SetList = (props) => {
 	listToDisplay = listToDisplay.shift();
 	
 	
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
