@@ -33,15 +33,6 @@ const ListSearch = (props) => {
 		return array[Math.floor(Math.random() * array.length)];
 	};
 
-	// If an object of info is needed...
-	// const dataArrays = idsArray.map((id, index) => {
-	// 	return {
-	// 		id: id,
-	// 		genres: genresArray[index],
-	// 		runTime: runTimesArray[index],
-	// 	};
-	// });
-
 	const handleGenreOption = (e) => {
 		setGenre(e.target.value);
 	};

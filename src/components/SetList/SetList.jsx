@@ -68,6 +68,7 @@ const SetList = (props) => {
 	IDArray = IDArray.filter((item, pos) => {
 		return IDArray.indexOf(item) == pos;
 	});
+	console.log(IDArray);
 
 	useEffect(() => {
 		let movieObjectsArray = [];
