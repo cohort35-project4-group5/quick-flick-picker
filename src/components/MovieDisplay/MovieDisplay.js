@@ -12,22 +12,18 @@
 // - display movieDetails using props
 //     - display title, trailer, description, director, cast and genre passed from movieDetails
 
-// - Add "Back to List" button to link to list search page
-// - Link H1 "Quick Flick Finder" to main page as well
+// npm install sweetalert2
+// import Swal from 'sweetalert2'
+// import Swal from "sweetalert2";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-// npm install sweetalert2
-// import Swal from 'sweetalert2'
-import Swal from "sweetalert2";
 
 // npm install react-player --save
 // import ReactPlayer from "react-player"
 import ReactPlayer from "react-player";
 
 const MovieDisplay = (props) => {
-
 	// userChoice will be assigned from movie ID from search bar on main page or from a click on movie thumbnail in list display frame
 	const [movieID, setMovieID] = useState(props.movieID);
 	const [movieDetails, setMovieDetails] = useState([]);
@@ -39,14 +35,14 @@ const MovieDisplay = (props) => {
 	const imageURL = "https://image.tmdb.org/t/p/w500";
 	const youTubeURL = "https://www.youtube.com/watch?v=";
 
-	const errorHandling = () => {
-		Swal.fire({
-			title: "Error!",
-			text: "Unable to find that movie. Please try again!",
-			icon: "error",
-			confirmButtonText: "OK",
-		});
-	};
+	// const errorHandling = () => {
+	// 	Swal.fire({
+	// 		title: "Error!",
+	// 		text: "Unable to find that movie. Please try again!",
+	// 		icon: "error",
+	// 		confirmButtonText: "OK",
+	// 	});
+	// };
 
 	// Axios call to get movie details
 
@@ -109,7 +105,7 @@ const MovieDisplay = (props) => {
 	}
 
 	// Setting trailerID to display relevant information
-	const trailerKey = trailerDetails.key;
+	const trailerKey = trailerDetails !== undefined ? trailerDetails.key : null;
 
 	// Destructuring movieCredits object to display relevant information
 	const actorsObject = cast.slice(0, 5);
@@ -124,24 +120,40 @@ const MovieDisplay = (props) => {
 			directors.push(crew[role].name);
 	}
 
-	return (
+	return trailerDetails !== undefined ? (
 		<div className="poster">
 			<div className="description">
 				<h2>{title}</h2>
 				<p>{overview}</p>
-				{/* <img
-					src={`${imageURL}${poster_path}`}
-					alt={`Poster of ${title}`}
-				/> */}
-				
 				<div className="trailer">
 					<ReactPlayer url={`${youTubeURL}${trailerKey}`} />
 					<div className="movieInfo">
 						<p>Genres: {genres.join(", ")}</p>
 						<p>Main Cast: {actors.join(", ")}</p>
 						<p>Director: {directors[0]}</p>
-						<a href={`https://www.imdb.com/title/${imdb_id}`}>More Information on IMDB</a>
+						<a href={`https://www.imdb.com/title/${imdb_id}`}>
+							More Information on IMDB
+						</a>
 					</div>
+				</div>
+			</div>
+		</div>
+	) : (
+		<div className="poster">
+			<div className="description">
+				<h2>{title}</h2>
+				<p>{overview}</p>
+				<img
+					src={`${imageURL}${poster_path}`}
+					alt={`Poster of ${title}`}
+				/>
+				<div className="movieInfo">
+					<p>Genres: {genres.join(", ")}</p>
+					<p>Main Cast: {actors.join(", ")}</p>
+					<p>Director: {directors[0]}</p>
+					<a href={`https://www.imdb.com/title/${imdb_id}`}>
+						More Information on IMDB
+					</a>
 				</div>
 			</div>
 		</div>

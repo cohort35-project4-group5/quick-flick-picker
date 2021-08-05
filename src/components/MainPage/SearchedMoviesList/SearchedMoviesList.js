@@ -3,6 +3,7 @@ import MovieDisplay from "../../MovieDisplay/MovieDisplay";
 import firebase from "../../../firebase";
 import { FaTimesCircle } from 'react-icons/fa';
 
+
 const SearchedMoviesList = (props) => {
   const [selectedList, setSelectedList] = useState("");
   const [selectedMovie, setSelectedMovie] = useState("");
@@ -80,12 +81,13 @@ const SearchedMoviesList = (props) => {
               key={`movie${i}`}
               className="movieContainer"
             >
+
               {/* <p>ID: {movieObj.id}</p> */}
               <div className="posterImg" >
                 <img onClick={() => selectMovie(movieObj.id)}
                   onKeyDown={e => e.key === 'Enter' && selectMovie(movieObj.id)}
                   tabIndex={0}
-                  src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
+    src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
                   alt={`Poster of ${movieObj.title}`}
                 />
               </div>

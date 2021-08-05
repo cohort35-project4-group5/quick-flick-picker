@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import firebase from "../../firebase";
-
+import Swal from "sweetalert2";
 import MovieSearchBar from "./MovieSearchBar/MovieSearchBar";
 import SearchedMoviesList from "./SearchedMoviesList/SearchedMoviesList";
 import UserMovieLists from "./UserMovieLists/UserMovieLists";
@@ -25,10 +25,30 @@ const MainPage = () => {
           format: "json",
           api_key: apiKey,
           query: userInput,
-          adult: false,
         },
       }).then((res) => {
-        setMoviesArray(res.data.results);
+        console.log(res.data.results);
+        if (res.data.results.length === 0) {
+          setUserInput("");
+          // Change text to suit the response needed
+          let message = "Coudln't find that movie. Please try another title!";
+          Swal.fire({
+            background: "#242424",
+            icon: "warning",
+            iconColor: "#e50914",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#e50914",
+            allowEnterKey: true,
+            allowEscapeKey: true,
+            html:
+              // Change title to suit the application
+              "<div><h2 style='color:white;margin-bottom: 20px'>Error!</h2><p style='color:white'>" +
+              message +
+              "</p></div>",
+          });
+        } else {
+          setMoviesArray(res.data.results);
+        }
       });
     }
   }, [userInput]);
