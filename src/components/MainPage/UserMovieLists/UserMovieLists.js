@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const UserMovieLists = (props) => {
 	const [toggleModal, setToggleModal] = useState(false);
-
 	const openListManager = () => {
 		setToggleModal(!toggleModal);
 	};
@@ -33,6 +32,7 @@ const UserMovieLists = (props) => {
 			)}
 		</div>
 	);
+
 
 };
 
