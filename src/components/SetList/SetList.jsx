@@ -9,26 +9,26 @@ import MovieCardDisplay from "./MovieCardDisplay.jsx";
 import "./SetList.css";
 import ListSearch from "../ListSearch/ListSearch.jsx";
 import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
+import ReturnHome from "./ReturnHome.jsx";
 
-const SetList = () => {
+const SetList = (props) => {
 	const [list, setList] = useState([]);
-	const [listKey, setListKey] = useState("");
 	const [matchedMovie, setMatchedMovie] = useState("");
 	const [newSearch, setNewSearch] = useState(false);
 
 	// Get list from main page list of lists, pass as a prop
-	const selectedList = "Oscar";
+	const selectedList = props.match.params.listname;
 
 	const [movieData, setMovieData] = useState([]);
 
-	const errorHandling = () => {
-		Swal.fire({
-			title: "Error!",
-			text: "Unable to find that movie. Please try again!",
-			icon: "error",
-			confirmButtonText: "OK",
-		});
-	};
+	// const errorHandling = () => {
+	// 	Swal.fire({
+	// 		title: "Error!",
+	// 		text: "Unable to find that movie. Please try again!",
+	// 		icon: "error",
+	// 		confirmButtonText: "OK",
+	// 	});
+	// };
 
 	useEffect(function () {
 		const dbRef = firebase.database().ref();
@@ -48,7 +48,7 @@ const SetList = () => {
 	}, []);
 
 	// Figure out ListKey to pass listkey value to movieCardDisplay;
-	let targetKey = '';
+	let targetKey = "";
 	let listToDisplay = [];
 	for (const item in list) {
 		if (list[item].listName === selectedList) {
@@ -58,10 +58,14 @@ const SetList = () => {
 	}
 	listToDisplay = listToDisplay.shift();
 
-	const IDArray = [];
+	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
 	}
+	// Filter IDArray to prevent duplicates being added to list
+	IDArray = IDArray.filter((item, pos) => {
+		return IDArray.indexOf(item) == pos;
+	});
 
 	useEffect(() => {
 		let movieObjectsArray = [];
@@ -103,6 +107,7 @@ const SetList = () => {
 				ids={IDArray}
 				returnValue={returnValue}
 			/>
+			<ReturnHome/>
 
 			{newSearch === false ? (
 				<div className="listMovies">
