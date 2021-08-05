@@ -12,22 +12,23 @@ const MainPage = () => {
   const [moviesArray, setMoviesArray] = useState([]);
   const [movieLists, setMovieLists] = useState([]);
 
-  useEffect(() => {
-    const apiKey = "b1d6597a25d870717493d54e43e127e0";
-    const apiUrl = "https://api.themoviedb.org/3/search/movie";
+	useEffect(() => {
+		const apiKey = "b1d6597a25d870717493d54e43e127e0";
+		const apiUrl = "https://api.themoviedb.org/3/search/movie";
 
-    if (userInput !== "") {
-      axios({
-        url: apiUrl,
-        method: "GET",
-        dataResponse: "json",
-        params: {
-          format: "json",
-          api_key: apiKey,
-          query: userInput,
-        },
-      }).then((res) => {
-        if (res.data.results.length === 0) {
+		if (userInput !== "") {
+			axios({
+				url: apiUrl,
+				method: "GET",
+				dataResponse: "json",
+				params: {
+					format: "json",
+					api_key: apiKey,
+					query: userInput,
+				},
+			}).then((res) => {
+				if (res.data.results.length === 0) {
+
           setUserInput("");
           // Change text to suit the response needed
           let message = "Coudln't find that movie. Please try another title!";
