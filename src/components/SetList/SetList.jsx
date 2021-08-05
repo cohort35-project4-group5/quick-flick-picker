@@ -43,6 +43,7 @@ const SetList = () => {
 				listObjects.push(listObject);
 			}
 			setList(listObjects);
+			console.log(listObjects);
 		});
 	}, []);
 
@@ -99,6 +100,7 @@ const SetList = () => {
 
 	// },[matchedMovie])
 
+	console.log(movieData);
 	return (
 		<div className="wrapper">
 			<ListSearch
