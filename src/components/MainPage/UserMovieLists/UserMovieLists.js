@@ -1,6 +1,8 @@
 import { useState } from "react";
 // import firebase from "../../../firebase";
 import ListModal from "../../ListModal/ListModal";
+import { Link, Route } from "react-router-dom";
+import SetList from "../../SetList/SetList";
 
 const UserMovieLists = (props) => {
   const [toggleModal, setToggleModal] = useState(false);
@@ -16,8 +18,13 @@ const UserMovieLists = (props) => {
         {/* Make a Link to Route it to the next page with <movie.key> */}
         <ul>
           {props.movieLists.map((movie, i) => {
-            return <li key={i}>{movie.listName}</li>;
+            return (
+              <li key={i}>
+                <Link to={`/list/${movie.listName}`}>{movie.listName}</Link>
+              </li>
+            );
           })}
+          <Route path="/list/:listname" component={SetList} />
         </ul>
         <button onClick={openListManager}>Manage Lists</button>
       </div>
