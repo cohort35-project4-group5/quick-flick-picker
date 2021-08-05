@@ -1,0 +1,67 @@
+.SetList {
+    display: flex;
+}
+// List Movies in the specific list title
+.posterContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listPoster {
+    position: relative;
+	padding: 20px 40px;
+	
+}
+.listMovies {
+	padding: 20px 0;
+}
+
+.listMovies h2 {
+	width: fit-content;
+	margin: 20px;
+	padding : 10px 30px;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+
+.deleteMovie {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	right: 10%;
+	top: 0;
+	background-color: red;
+	border-radius: 50%;
+}
+.deleteMovie:hover {
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
+.deleteMovieSymbol {
+	position: absolute;
+	top: 20%;
+	right: 23%;
+}
+
+
+// Search Box 
+
+.searchBox {
+	margin: 10px 20px 0 20px;
+	border-bottom: 1px solid white;
+}
+
+// Return Home 
+.returnHome {
+	width: fit-content;
+	margin: 20px;
+	padding : 10px 30px;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+.returnHome:hover {
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}

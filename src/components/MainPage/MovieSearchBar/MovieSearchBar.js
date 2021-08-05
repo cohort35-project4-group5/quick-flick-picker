@@ -14,7 +14,7 @@ const MovieSearchBar = (props) => {
 
   return (
     <div className="movieSearchBar">
-      <h1>What do you feel like watching?</h1>
+      <h2>What do you feel like watching?</h2>
       <form action="submit" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="movieSearchInput">
           Movie Title:

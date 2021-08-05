@@ -112,11 +112,10 @@ function ListModal() {
 					const defferedFunction = () => handleDelete(listObject.key);
 					return (
 						<li key={listObject.key}>
-							<div className="addlist-container">
+							<div className="delete-container">
 								<p>{listObject.listName}</p>
-								<button onClick={defferedFunction}>
-
-									<FaTimesCircle />
+								<button  onClick={defferedFunction}>
+									<FaTimesCircle/>
 								</button>
 							</div>
 						</li>
@@ -127,13 +126,15 @@ function ListModal() {
 			{/* Form for User to add additional List title  */}
 			<form className ="addlist-form"action="submit" onSubmit={handleSubmit}>
 				<label className="labelForList" htmlFor="userListChoice">Create a new list </label>
+				<div className="inputFormContainer">
 				<input
 					type="text"
 					id="userListChoice"
 					onChange={handleChange}
 					value={userInput}
 				/>
-				<button className="addItemBtn"> <AiFillPlusCircle/> </button>
+				<button> <AiFillPlusCircle/> </button>
+				</div>
 			</form>
 		</div>
 	);

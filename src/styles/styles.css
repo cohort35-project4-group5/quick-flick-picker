@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 .mainPageFlexContainer {
   display: flex;
 }
@@ -13,14 +14,6 @@
   overflow: auto;
   z-index: 1;
   background-color: papayawhip;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
 }
 
 .searchedMoviesList ul {
@@ -41,6 +34,142 @@ img {
   min-width: 200px;
 }
 
+.movieSearchBar {
+  padding: 50px;
+  padding-top: 70px;
+  background: #242424;
+}
+
+.movieSearchBar form {
+  margin-bottom: 50px;
+}
+
+.movieSearchBar input {
+  padding: 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.movieSearchBar input:nth-child(3) {
+  background: #e50914;
+  color: white;
+}
+
+.movieSearchBar label.sr-only {
+  color: white;
+  font-size: 22px;
+  margin-top: 10px;
+  padding-top: 3px;
+  margin-right: 10px;
+}
+
+.searchedMoviesList {
+  padding: 50px;
+  margin-top: -30px;
+}
+
+.userMovieLists ul li {
+  text-align: center;
+  border: 1px solid #e50914;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  min-width: 160px;
+  max-width: 330px;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.userMovieLists ul li:hover,
+.userMovieLists ul li:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.userMovieLists {
+  margin-left: -55px;
+  text-align: center;
+  margin-right: 50px;
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+.userMovieLists button {
+  background: #e50914;
+  border-radius: 5px;
+}
+
+.userMovieLists button:hover,
+.userMovieLists button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.movieDetailsContainer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  overflow: auto;
+  z-index: 1;
+  background-color: papayawhip;
+}
+
+.searchedMoviesList ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.posterImg {
+  width: 200px;
+}
+
+img {
+  width: 100%;
+}
+
+.searchBox {
+  color: white;
+  font-size: 22px;
+}
+
+.searchBox select {
+  padding: 15px;
+  border: none;
+}
+
+.searchBox button {
+  background: #e50914;
+  padding: 16px;
+  border: none;
+  margin-left: 10px;
+}
+
+header h1 {
+  padding-top: 80px;
+  padding: 30px;
+}
+
+.posterContainer {
+  justify-content: start !important;
+}
+
+.poster {
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.listMovies h2 {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.userMovieLists {
+  min-width: 200px;
+}
+
 .listModalContainer {
   position: fixed;
   display: flex;
@@ -50,18 +179,23 @@ img {
   width: 100%;
   height: 70%;
   left: 0;
+  top: 0;
   overflow: auto;
   z-index: 1;
-  background-color: papayawhip;
+  background-color: #050504;
 }
 
 .listModal {
   padding: 10px;
   width: 90%;
+  background-color: #353535;
+  border-radius: 10px;
+  border: 2px solid #F2F2F2;
 }
 
 .listModal h2 {
   margin-left: 45px;
+  text-align: start;
 }
 
 .listtitle-container {
@@ -72,7 +206,7 @@ img {
   margin: 20px 5%;
 }
 
-.addlist-container {
+.delete-container {
   position: relative;
 }
 
@@ -81,16 +215,17 @@ img {
   margin-right: 15px;
 }
 
-.deleteBtn {
+.delete-container button {
   position: absolute;
-  right: 10px;
-  top: 0;
+  right: -30px;
+  top: -40px;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
   outline: none;
-  background-color: #101011;
-  text-transform: capitalize;
   margin-left: 10px;
-  color: white;
+  color: #E50914;
+  font-size: 20px;
 }
 
 .addlist-form {
@@ -105,6 +240,12 @@ img {
   font-weight: 700;
   margin: 0 10px;
   margin-left: 45px;
+  text-align: start;
+}
+
+.inputFormContainer {
+  display: flex;
+  padding-bottom: 20px;
 }
 
 .addlist-form input {
@@ -115,20 +256,121 @@ img {
   height: 3vh;
 }
 
-.addItemBtn {
-  border-radius: 50%;
+.inputFormContainer button {
   cursor: pointer;
   outline: none;
-  background: #918e8e;
-  color: #fff;
-  text-transform: capitalize;
-  margin-left: 10px;
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  padding: 20px;
 }
 
-.addItemBtn:hover,
-.addItemBtn:focus {
+.SetList {
+  display: flex;
+}
+
+.posterContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listPoster {
+  position: relative;
+  padding: 20px 40px;
+}
+
+.listMovies {
+  padding: 20px 0;
+}
+
+.listMovies h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px;
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.deleteMovie {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  color: white;
+  right: 10%;
+  top: 0;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.deleteMovie:hover {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
+}
+
+.deleteMovieSymbol {
+  position: absolute;
+  top: 20%;
+  right: 23%;
+}
+
+.searchBox {
+  margin: 10px 20px 0 20px;
+  border-bottom: 1px solid white;
+}
+
+.returnHome {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px;
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.returnHome:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.poster {
+  margin: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.description p {
+  font-style: italic;
+}
+
+.poster h2 {
+  padding-left: 20px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.trailer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.movieInfo {
+  width: 40%;
+  margin: 30px;
+  text-align: left;
+  font-style: italic;
+}
+
+.movieInfo a:hover {
+  text-decoration: underline;
 }
 
 html {
@@ -139,10 +381,60 @@ html {
 
 .App {
   color: #F2F2F2;
+  background: linear-gradient(#121212, #212121);
+  margin-top: -20px;
 }
 
 h1 {
   font-weight: 700;
   font-family: "Inter", sans-serif;
   color: #E50914;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+h1:hover {
+  text-decoration: underline;
+  color: transparent;
+  transition: 500ms ease;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Inter", sans-serif;
+}
+
+h2, h3 {
+  color: #F2F2F2;
+  font-family: "Inter", sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  color: #F2F2F2;
+  list-style-type: none;
+}
+
+a {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  padding: 14px 40px;
+  color: white;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }/*# sourceMappingURL=styles.css.map */

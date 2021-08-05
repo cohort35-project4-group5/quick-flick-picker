@@ -2,9 +2,14 @@
 .listModal {
     padding: 10px;
     width: 90%;
+    background-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    border: 2px solid $whiteColor;
+    
 }
 .listModal h2 {
     margin-left: 45px;
+    text-align: start;
 }
 
 // All the List Titles Displaying
@@ -15,25 +20,28 @@
     gap: 25px;
     margin: 20px 5%;    
 }
-.addlist-container {
+.delete-container {
     position: relative;  
 }
 
 .addlist-container p {
     font-size: 1.3rem;
     margin-right: 15px;
+
 }
 
-.deleteBtn {
+.delete-container button {
     position: absolute;
-    right: 10px;
-    top:0;
+    right: -30px;
+    top:-40px;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
     outline: none;
-    background-color: $backgroundColor;
-    text-transform: capitalize; 
     margin-left: 10px;
-    color: white;
+    color: $redColor;
+    font-size: 20px;
+
 }
 
 // List Title Form
@@ -51,8 +59,14 @@
     font-weight: 700;
     margin: 0 10px;
     margin-left: 45px;
+    text-align: start;
 }
 
+.inputFormContainer{
+    display: flex;
+    padding-bottom: 20px;
+
+}
 .addlist-form input {
     margin-top: 20px;
     margin-left: 45px;
@@ -60,18 +74,12 @@
     width: 50%;
     height: 3vh;
 }
-.addItemBtn {
-    border-radius: 50%;
+.inputFormContainer button {
     cursor: pointer;
     outline: none;
-    background:rgb(145, 142, 142);
-    color: #fff;
-    text-transform: capitalize; 
-    margin-left: 10px;
-}
-
-.addItemBtn:hover,
-.addItemBtn:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    
 }

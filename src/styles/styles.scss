@@ -3,6 +3,8 @@
 @import "../components/MainPage/UserMovieLists/UserMovieLists";
 @import "../components/ListModal/ListModal";
 @import "../styles/partials/fonts";
+@import "../components/SetList/SetList";
+@import "../components/MovieDisplay/MovieDisplay";
 
 html {
     background-color: $backgroundColor;
@@ -11,10 +13,57 @@ html {
 }
 .App {   
     color: $whiteColor;
+    background: linear-gradient(#121212, #212121);
+    margin-top: -20px;
 }
 
 h1 {
     font-weight: 700;
     font-family: $headerFont;
     color: $redColor;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+h1:hover {
+    text-decoration: underline;
+    color: transparent;
+    transition: 500ms ease;
+
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family:$bodyFont;
+}
+
+h2, h3 {
+    color: $whiteColor;
+    font-family:  $bodyFont;
+}
+
+ul {
+    padding: 0;
+}
+li {
+    color: $whiteColor;
+    list-style-type: none;
+}
+
+a {
+    color: $whiteColor;
+    text-decoration: none;
+}
+button {
+    background: transparent;
+    padding: 14px 40px;
+    color: white;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
 }

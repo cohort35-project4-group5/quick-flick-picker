@@ -6,7 +6,6 @@ import axios from "axios";
 // import Swal from 'sweetalert2'
 import Swal from "sweetalert2";
 import MovieCardDisplay from "./MovieCardDisplay.jsx";
-import "./SetList.css";
 import ListSearch from "../ListSearch/ListSearch.jsx";
 import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
 import ReturnHome from "./ReturnHome.jsx";
@@ -101,7 +100,6 @@ const SetList = (props) => {
 		setNewSearch(true);
 	};
 
-	console.log(movieData);
 	return (
 		<div className="wrapper">
 			<ListSearch

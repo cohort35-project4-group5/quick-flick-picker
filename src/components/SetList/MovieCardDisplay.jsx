@@ -1,4 +1,3 @@
-import "./SetList.css";
 import { ImCross } from "react-icons/im";
 import firebase from "firebase";
 import { useState } from "react";
