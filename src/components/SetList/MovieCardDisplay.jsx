@@ -15,7 +15,6 @@ function MovieCardDisplay(props) {
 				setListItemToDelete(listItem);
 			}
 		}
-		console.log(listItemToDelete, movieToDelete)
 
 		if (listItemToDelete !== ''){
 			const dbRef = firebase.database().ref();
@@ -28,8 +27,6 @@ function MovieCardDisplay(props) {
 				.remove();
 		}
 	};
-
-	console.log(props)
 
 	return (
 		<div className="listPoster">

@@ -29,7 +29,6 @@ const MainPage = () => {
 					query: userInput,
 				},
 			}).then((res) => {
-				console.log(res.data.results);
 				if (res.data.results.length === 0) {
           setUserInput("");
 					// Change text to suit the response needed

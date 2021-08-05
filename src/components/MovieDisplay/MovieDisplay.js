@@ -12,9 +12,8 @@
 // - display movieDetails using props
 //     - display title, trailer, description, director, cast and genre passed from movieDetails
 
-// npm install sweetalert2
-// import Swal from 'sweetalert2'
-// import Swal from "sweetalert2";
+// - Add "Back to List" button to link to list search page
+// - Link H1 "Quick Flick Finder" to main page as well
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -35,17 +34,7 @@ const MovieDisplay = (props) => {
 	const imageURL = "https://image.tmdb.org/t/p/w500";
 	const youTubeURL = "https://www.youtube.com/watch?v=";
 
-	// const errorHandling = () => {
-	// 	Swal.fire({
-	// 		title: "Error!",
-	// 		text: "Unable to find that movie. Please try again!",
-	// 		icon: "error",
-	// 		confirmButtonText: "OK",
-	// 	});
-	// };
-
 	// Axios call to get movie details
-
 	useEffect(() => {
 		setMovieID(props.movieID);
 		axios({
@@ -105,7 +94,10 @@ const MovieDisplay = (props) => {
 	}
 
 	// Setting trailerID to display relevant information
-	const trailerKey = trailerDetails !== undefined ? trailerDetails.key : null;
+	let trailerKey = "";
+	if (trailerDetails !== undefined) {
+		trailerKey = trailerDetails.key;
+	}
 
 	// Destructuring movieCredits object to display relevant information
 	const actorsObject = cast.slice(0, 5);
@@ -120,7 +112,7 @@ const MovieDisplay = (props) => {
 			directors.push(crew[role].name);
 	}
 
-	return trailerDetails !== undefined ? (
+	return trailerDetails !== '' ? (
 		<div className="poster">
 			<div className="description">
 				<h2>{title}</h2>
