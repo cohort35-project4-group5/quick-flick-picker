@@ -20,14 +20,25 @@ const SetList = (props) => {
 
 	const [movieData, setMovieData] = useState([]);
 
-	// const errorHandling = () => {
-	// 	Swal.fire({
-	// 		title: "Error!",
-	// 		text: "Unable to find that movie. Please try again!",
-	// 		icon: "error",
-	// 		confirmButtonText: "OK",
-	// 	});
-	// };
+	const errorHandling = () => {
+		// Change text to suit the response needed
+		let message =
+			"Your list is empty. Please add some movies to it on the home page!";
+		Swal.fire({
+			background: "#242424",
+			icon: "warning",
+			iconColor: "#e50914",
+			confirmButtonText: "OK",
+			confirmButtonColor: "#e50914",
+			allowEnterKey: true,
+			allowEscapeKey: true,
+			html:
+			// Change title to suit the application
+				"<div><h2 style='color:white;margin-bottom: 20px'>Heads Up!</h2><p style='color:white'>" +
+				message +
+				"</p></div>",
+		});
+	};
 
 	useEffect(function () {
 		const dbRef = firebase.database().ref();
@@ -46,6 +57,7 @@ const SetList = (props) => {
 		});
 	}, []);
 
+
 	// Figure out ListKey to pass listkey value to movieCardDisplay;
 	let targetKey = "";
 	let listToDisplay = [];
@@ -63,10 +75,9 @@ const SetList = (props) => {
 	}
 	// Filter IDArray to prevent duplicates being added to list
 	IDArray = IDArray.filter((item, pos) => {
-		return IDArray.indexOf(item) == pos;
+		return IDArray.indexOf(item) === pos;
 	});
-	console.log(IDArray);
-
+	
 	useEffect(() => {
 		let movieObjectsArray = [];
 		const apiKey = "d29e1942e44de0965186873d8d6223e5";
@@ -83,15 +94,16 @@ const SetList = (props) => {
 			}
 		});
 	}, [list]);
-
+	
+	
 	const genres = [];
 	movieData.map((i) => {
-		genres.push(i.genres);
+		return genres.push(i.genres);
 	});
 
 	const runTimes = [];
 	movieData.map((i) => {
-		runTimes.push(i.runtime);
+		return runTimes.push(i.runtime);
 	});
 
 	const returnValue = (value) => {
@@ -107,7 +119,7 @@ const SetList = (props) => {
 				ids={IDArray}
 				returnValue={returnValue}
 			/>
-			<ReturnHome/>
+			<ReturnHome />
 
 			{newSearch === false ? (
 				<div className="listMovies">
