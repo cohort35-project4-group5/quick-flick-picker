@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import MovieDisplay from "../../MovieDisplay/MovieDisplay";
 import firebase from "../../../firebase";
-
-import ListModal from "../../ListModal/ListModal";
+import { FaTimesCircle } from 'react-icons/fa';
 
 const SearchedMoviesList = (props) => {
   const [selectedList, setSelectedList] = useState("");
@@ -45,9 +44,9 @@ const SearchedMoviesList = (props) => {
               onSubmit={handleSubmit}
             >
               <label htmlFor="movieListsSelect" className="sr-only">
-                Category:
               </label>
               <select
+        
                 name="movieListsSelect"
                 id="movieListsSelect"
                 className="movieListsSelect"
@@ -56,7 +55,7 @@ const SearchedMoviesList = (props) => {
                 required
               >
                 <option disabled value="">
-                  Select Category
+                  Select List
                 </option>
                 {props.movieLists.map((movieList, i) => {
                   return (
@@ -66,9 +65,9 @@ const SearchedMoviesList = (props) => {
                   );
                 })}
               </select>
-              <input type="submit" value="Add to List" />
+              <input className="addToList" type="submit" value="Add to List" />
             </form>
-            <button onClick={closeMovieDetails}>Exit</button>
+            <button className="closeBtn" onClick={closeMovieDetails}><FaTimesCircle/></button>
           </div>
         </div>
       ) : (

@@ -1,3 +1,5 @@
+@import "../../../styles/partials/fonts";
+
 .movieDetailsContainer {
   position: fixed;
   display: flex;
@@ -41,11 +43,18 @@ img {
   border: none;
   margin-left: 10px;
 }
+.movieListsSelect {
+  width: 15vw;
+  height: 5vh;
+  border-radius: 5px;
+}
 
 header h1 {
   padding-top: 80px;
   padding: 30px;
 }
+
+// Poster Container 
 
 .posterContainer {
   justify-content: start !important;
@@ -53,9 +62,54 @@ header h1 {
 .poster {
   margin-left: 30px;
   margin-right: 20px;
+  position: relative;
+}
+.posterImg:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }
 
 .listMovies h2 {
   margin-left: 30px;
   margin-top: 20px;
 }
+
+.searchedMoviesList {
+  position: relative;
+}
+.movieDetailsContainer {
+  background-color: rgb(32, 32, 32);
+  position: absolute;
+  top:20px;
+  margin: 30px;
+  padding: 20px;
+  height:fit-content;
+  border-radius: 10px;
+}
+
+// Add Movie Form - to add the movies to specific list 
+.addMovieForm {
+  margin-left: 20px;
+}
+
+.addToList {
+  background: transparent;
+  padding: 14px 40px;
+  color: white;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.addToList:hover,
+.addToList:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+.closeBtn {
+  position: absolute;
+  top:0;
+  right:0;
+  border: none;
+  font-size: 23px;
+}
+
