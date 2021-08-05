@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const MovieSearchBar = (props) => {
-  const [userInput, setUserInput] = useState("matrix");
+  const [userInput, setUserInput] = useState("");
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
