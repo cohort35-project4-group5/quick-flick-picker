@@ -69,6 +69,52 @@ img {
   margin-top: -30px;
 }
 
+.userMovieLists ul li {
+  text-align: center;
+  border: 1px solid #e50914;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  min-width: 160px;
+  max-width: 330px;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.userMovieLists ul li:hover,
+.userMovieLists ul li:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.userMovieLists {
+  margin-left: -55px;
+  text-align: center;
+  margin-right: 50px;
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+.userMovieLists button {
+  background: #e50914;
+  border-radius: 5px;
+}
+
+.userMovieLists button:hover,
+.userMovieLists button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+@media (max-width: 800px) {
+  .mainPageFlexContainer {
+    flex-direction: column-reverse;
+  }
+
+  .userMovieLists {
+    display: flex;
+    justify-content: center;
+  }
+}
 .searchedMoviesList ul {
   display: flex;
   flex-wrap: wrap;
@@ -93,10 +139,6 @@ img {
 header h1 {
   padding-top: 80px;
   padding: 30px;
-}
-
-.posterContainer {
-  justify-content: start !important;
 }
 
 .poster {
@@ -163,6 +205,137 @@ header h1 {
   font-size: 23px;
 }
 
+@media (max-width: 950px) {
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: -4%;
+  }
+}
+@media (max-width: 1050px) {
+  .movieDetailsContainer {
+    top: 40px;
+    width: 100%;
+    left: -3%;
+    text-align: center;
+  }
+
+  .trailer {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .movieInfo {
+    width: 81%;
+    margin: 30px;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .html5-video-player {
+    position: relative;
+  }
+
+  #player {
+    max-width: 100%;
+  }
+}
+@media (max-width: 950px) {
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: -4%;
+  }
+}
+@media (max-width: 870px) {
+  .mainPageFlexContainer {
+    flex-direction: column;
+  }
+}
+@media (max-width: 850px) {
+  .movieInfo {
+    width: 80%;
+  }
+
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: -4%;
+  }
+
+  .trailer {
+    flex-direction: column;
+    max-width: 249px;
+  }
+
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .trailer div:nth-child(1) {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 21px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: 1%;
+  }
+
+  .movieInfo {
+    width: 81%;
+    margin: 30px;
+    text-align: left;
+    font-style: italic;
+  }
+}
+@media (max-width: 525px) {
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: 1%;
+  }
+
+  .trailer {
+    flex-direction: column;
+    max-width: 249px;
+  }
+
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .trailer div:nth-child(1) {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 21px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+
+  .movieDetailsContainer {
+    top: 40px;
+    width: 91%;
+    left: 1%;
+  }
+
+  .movieInfo {
+    width: 81%;
+    margin: 30px;
+    text-align: left;
+    font-style: italic;
+  }
+}
 .userMovieLists ul li {
   text-align: center;
   border: 1px solid #e50914;
@@ -328,8 +501,9 @@ header h1 {
 }
 
 .posterContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .listPoster {
@@ -666,16 +840,16 @@ html {
   overflow: hidden;
 }
 
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
 html {
   background-color: #101011;
   font-family: "Inter", sans-serif;
   margin: 10px;
-}
-
-.App {
-  color: #F2F2F2;
-  background: linear-gradient(#121212, #212121);
-  margin-top: -20px;
 }
 
 h1 {
@@ -730,4 +904,10 @@ button:hover,
 button:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
+}
+
+.App {
+  color: #F2F2F2;
+  background: linear-gradient(#121212, #212121);
+  margin-top: -20px;
 }/*# sourceMappingURL=styles.css.map */

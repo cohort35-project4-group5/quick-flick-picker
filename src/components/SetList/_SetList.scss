@@ -3,8 +3,10 @@
 }
 // List Movies in the specific list title
 .posterContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
 }
 
 .listPoster {
