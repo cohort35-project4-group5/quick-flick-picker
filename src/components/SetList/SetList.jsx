@@ -18,7 +18,6 @@ const SetList = (props) => {
 
 	// Get list from main page list of lists, pass as a prop
 	const selectedList = props.match.params.listname;
-	console.log(props);
 
 	const [movieData, setMovieData] = useState([]);
 
@@ -45,7 +44,6 @@ const SetList = (props) => {
 				listObjects.push(listObject);
 			}
 			setList(listObjects);
-			console.log(listObjects);
 		});
 	}, []);
 
@@ -101,7 +99,6 @@ const SetList = (props) => {
 		setNewSearch(true);
 	};
 
-	console.log(movieData);
 	return (
 		<div className="wrapper">
 			<ListSearch
