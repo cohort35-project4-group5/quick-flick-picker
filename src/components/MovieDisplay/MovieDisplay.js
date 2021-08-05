@@ -128,18 +128,21 @@ const MovieDisplay = (props) => {
 		<div className="poster">
 			<div className="description">
 				<h2>{title}</h2>
-				<img
+				<p>{overview}</p>
+				{/* <img
 					src={`${imageURL}${poster_path}`}
 					alt={`Poster of ${title}`}
-				/>
-				<p>{overview}</p>
-				<div>
+				/> */}
+				
+				<div className="trailer">
 					<ReactPlayer url={`${youTubeURL}${trailerKey}`} />
+					<div className="movieInfo">
+						<p>Genres: {genres.join(", ")}</p>
+						<p>Main Cast: {actors.join(", ")}</p>
+						<p>Director: {directors[0]}</p>
+						<a href={`https://www.imdb.com/title/${imdb_id}`}>More Information on IMDB</a>
+					</div>
 				</div>
-				<p>{genres.join(", ")}</p>
-				<p>Main Cast: {actors.join(", ")}</p>
-				<p>Director: {directors[0]}</p>
-				<a href={`https://www.imdb.com/title/${imdb_id}`}>On IMDB</a>
 			</div>
 		</div>
 	);
