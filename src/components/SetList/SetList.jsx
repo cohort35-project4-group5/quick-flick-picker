@@ -44,7 +44,8 @@ const SetList = (props) => {
 		}
 	}
 	listToDisplay = listToDisplay.shift();
-
+	
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
@@ -69,7 +70,8 @@ const SetList = (props) => {
 				setMovieData(movieObjectsArray);
 			}
 		});
-	}, [IDArray, list]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [list]);
 
 	const genres = [];
 	movieData.map((i) => {
