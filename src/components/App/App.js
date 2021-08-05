@@ -1,13 +1,15 @@
 import SetList from "../SetList/SetList";
 import MainPage from "../MainPage/MainPage";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header>
-          <h1>Quick Flick Picker</h1>
+          <Link to="/">
+            <h1>QuickFlickPix</h1>
+          </Link>
         </header>
         <main>
           <Route exact path="/" component={MainPage} />
