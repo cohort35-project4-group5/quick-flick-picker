@@ -1,13 +1,14 @@
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
 html {
     background-color: $backgroundColor;
     font-family: $bodyFont;
     margin: 10px;
 }
-.App {   
-    color: $whiteColor;
-    background: linear-gradient(#121212, #212121);
-    margin-top: -20px;
-}
+
 
 h1 {
     font-weight: 700;

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
 	return (
 		<Router>
-			<div className="App">
+			<div className="App wrapper">
 				<header>
 					<h1>QuickFlickPix</h1>
 				</header>

@@ -98,3 +98,13 @@ img {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
+
+@media (max-width: 800px) {
+  .mainPageFlexContainer {
+    flex-direction: column-reverse;
+  }
+  .userMovieLists {
+    display: flex;
+    justify-content: center;
+  }
+}
