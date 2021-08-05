@@ -7,7 +7,7 @@ import SearchedMoviesList from "./SearchedMoviesList/SearchedMoviesList";
 import UserMovieLists from "./UserMovieLists/UserMovieLists";
 
 const MainPage = () => {
-  const defaultMovieToShow = "";
+  const defaultMovieToShow = "movie";
   const [userInput, setUserInput] = useState(defaultMovieToShow);
   const [moviesArray, setMoviesArray] = useState([]);
   const [movieLists, setMovieLists] = useState([]);
@@ -25,13 +25,9 @@ const MainPage = () => {
           format: "json",
           api_key: apiKey,
           query: userInput,
+          adult: false,
         },
       }).then((res) => {
-        console.log(res.data.results);
-        // const movieIdArray = res.data.results.map((movieObj) => {
-        //   return movieObj.id;
-        // });
-        // console.log(movieIdArray);
         setMoviesArray(res.data.results);
       });
     }

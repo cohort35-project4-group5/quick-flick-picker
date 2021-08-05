@@ -9,9 +9,8 @@
   height: 70%;
   overflow: auto;
   z-index: 1;
-  background-color: papayawhip;
+  // background-color: papayawhip;
 }
-
 
 .searchedMoviesList ul {
   display: flex;
@@ -29,7 +28,6 @@ img {
 .searchBox {
   color: white;
   font-size: 22px;
-  
 }
 
 .searchBox select {
