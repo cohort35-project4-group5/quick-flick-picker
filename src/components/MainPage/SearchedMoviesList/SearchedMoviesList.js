@@ -79,11 +79,12 @@ const SearchedMoviesList = (props) => {
             <li
               key={`movie${i}`}
               className="movieContainer"
-              onClick={() => selectMovie(movieObj.id)}
             >
               {/* <p>ID: {movieObj.id}</p> */}
-              <div className="posterImg">
-                <img
+              <div className="posterImg" >
+                <img onClick={() => selectMovie(movieObj.id)}
+                  onKeyDown={e => e.key === 'Enter' && selectMovie(movieObj.id)}
+                  tabIndex={0}
                   src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
                   alt={`Poster of ${movieObj.title}`}
                 />

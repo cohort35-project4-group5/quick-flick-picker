@@ -7,7 +7,7 @@ import SetList from "../../SetList/SetList";
 const UserMovieLists = (props) => {
   const [toggleModal, setToggleModal] = useState(false);
 
-  const openListManager = () => {
+  const toggleListManager = () => {
     setToggleModal(!toggleModal);
   };
 
@@ -25,12 +25,12 @@ const UserMovieLists = (props) => {
             );
           })}
         </ul>
-        <button onClick={openListManager}>Manage Lists</button>
+        <button onClick={toggleListManager}>Manage Lists</button>
       </div>
       {toggleModal == true ? (
-        <div className="listModalContainer">
-          <ListModal />
-        </div>
+       
+          <ListModal toggleListManager={toggleListManager} />
+       
       ) : (
         <div></div>
       )}
