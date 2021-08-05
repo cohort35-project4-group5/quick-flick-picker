@@ -1,111 +1,99 @@
 @import "../../../styles/partials/fonts";
 
 .searchedMoviesList ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
 }
 
 .posterImg {
-  width: 200px;
+	width: 200px;
 }
 
 img {
-  width: 100%;
-}
-.searchBox {
-  color: white;
-  font-size: 22px;
+	width: 100%;
 }
 
-.searchBox select {
-  padding: 15px;
-  border: none;
-}
 
-.searchBox button {
-  background: #e50914;
-  padding: 16px;
-  border: none;
-  margin-left: 10px;
-}
+
 .movieListsSelect {
-  width: 15vw;
-  height: 5vh;
-  border-radius: 5px;
-  padding-left: 10px;
+	width: 15vw;
+	height: 5vh;
+	border-radius: 5px;
+	padding-left: 10px;
 }
 
 header h1 {
-  padding-top: 80px;
-  padding: 30px;
+	padding-top: 80px;
+	padding: 30px;
 }
 
-// Poster Container 
+// Poster Container
 
 // .posterContainer {
 //   justify-content: start !important;
 // }
 .poster {
-  margin-left: 30px;
-  margin-right: 20px;
-  position: relative;
-  
+	margin-left: 30px;
+	margin-right: 20px;
+	position: relative;
 }
 
 .posterImg img:hover,
 .posterImg img:focus {
-  transform: scale(1.15);
-  outline: 2px solid red;
-  cursor: pointer;
+	transform: scale(1.15);
+	outline: 2px solid red;
+	cursor: pointer;
 }
 
 .listMovies h2 {
-  margin-left: 30px;
-  margin-top: 20px;
-
+	margin-left: 30px;
+	margin-top: 20px;
 }
 
 .searchedMoviesList {
-  position: relative;
-}
-.movieDetailsContainer {
-  background-color: rgb(32, 32, 32);
-  position: fixed;
-  top:20px;
-  margin: 30px;
-  padding: 20px;
-  height:fit-content;
-  border-radius: 10px;
-  overflow: auto;
-  z-index: 1;
+	position: relative;
 }
 
-// Add Movie Form - to add the movies to specific list 
+.movieDetailsContainer {
+	background-color: rgb(32, 32, 32);
+	position: fixed;
+	top: 20px;
+	margin: 30px;
+	padding: 20px;
+	height: fit-content;
+	border-radius: 10px;
+	overflow: auto;
+	z-index: 1;
+}
+
+// Add Movie Form - to add the movies to specific list
 .addMovieForm {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 
 .addToList {
-  background: transparent;
-  padding: 14px 40px;
-  color: white;
-  border: 1px solid #e50914;
-  border-radius: 5px;
-  margin-left: 10px;
+	background: transparent;
+	padding: 14px 40px;
+	color: white;
+	border: 1px solid #e50914;
+	border-radius: 5px;
+	margin-left: 10px;
 }
+
 .addToList:hover,
 .addToList:focus {
-  cursor: pointer;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+	cursor: pointer;
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+	transform: translateY(-0.25em);
 }
+
 .closeBtn {
-  position: absolute;
-  top:0;
-  right:0;
-  border: none;
-  font-size: 23px;
+	position: absolute;
+	top: 40px;
+	right: 15px;
+	border: none;
+	font-size: 23px;
 }
 
 @media (max-width: 950px) {

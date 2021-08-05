@@ -4,8 +4,7 @@ import MainPage from "../MainPage/MainPage";
 const ReturnHome = () => {
 	return (
 		<div className="returnHome">
-			<Link to="/">Home</Link>
-			<Route exact path="/" component={MainPage} />
+			<Link to="/"><p>Home</p></Link>
 		</div>
 	);
 };

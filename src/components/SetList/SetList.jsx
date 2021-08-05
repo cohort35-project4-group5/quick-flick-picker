@@ -1,14 +1,11 @@
 import firebase from "../../firebase.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-// npm install sweetalert2
-// import Swal from 'sweetalert2'
-import Swal from "sweetalert2";
 import MovieCardDisplay from "./MovieCardDisplay.jsx";
 import ListSearch from "../ListSearch/ListSearch.jsx";
 import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
 import ReturnHome from "./ReturnHome.jsx";
+import { ImVideoCamera } from "react-icons/im";
 
 const SetList = (props) => {
 	const [list, setList] = useState([]);
@@ -19,26 +16,6 @@ const SetList = (props) => {
 	const selectedList = props.match.params.listname;
 
 	const [movieData, setMovieData] = useState([]);
-
-	const errorHandling = () => {
-		// Change text to suit the response needed
-		let message =
-			"Your list is empty. Please add some movies to it on the home page!";
-		Swal.fire({
-			background: "#242424",
-			icon: "warning",
-			iconColor: "#e50914",
-			confirmButtonText: "OK",
-			confirmButtonColor: "#e50914",
-			allowEnterKey: true,
-			allowEscapeKey: true,
-			html:
-			// Change title to suit the application
-				"<div><h2 style='color:white;margin-bottom: 20px'>Heads Up!</h2><p style='color:white'>" +
-				message +
-				"</p></div>",
-		});
-	};
 
 	useEffect(function () {
 		const dbRef = firebase.database().ref();
@@ -57,7 +34,6 @@ const SetList = (props) => {
 		});
 	}, []);
 
-
 	// Figure out ListKey to pass listkey value to movieCardDisplay;
 	let targetKey = "";
 	let listToDisplay = [];
@@ -68,7 +44,8 @@ const SetList = (props) => {
 		}
 	}
 	listToDisplay = listToDisplay.shift();
-
+	
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
@@ -77,7 +54,7 @@ const SetList = (props) => {
 	IDArray = IDArray.filter((item, pos) => {
 		return IDArray.indexOf(item) === pos;
 	});
-	
+
 	useEffect(() => {
 		let movieObjectsArray = [];
 		const apiKey = "d29e1942e44de0965186873d8d6223e5";
@@ -93,9 +70,9 @@ const SetList = (props) => {
 				setMovieData(movieObjectsArray);
 			}
 		});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [list]);
-	
-	
+
 	const genres = [];
 	movieData.map((i) => {
 		return genres.push(i.genres);
@@ -119,11 +96,18 @@ const SetList = (props) => {
 				ids={IDArray}
 				returnValue={returnValue}
 			/>
-			<ReturnHome />
 
 			{newSearch === false ? (
 				<div className="listMovies">
-					<h2>{selectedList}</h2>
+					<h2>
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+						{selectedList}
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+					</h2>
 					<div className="posterContainer">
 						{movieData.map((i) => {
 							return (

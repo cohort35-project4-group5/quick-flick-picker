@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
-
 const ListSearch = (props) => {
 	const [genre, setGenre] = useState("Action");
 	const [runTime, setRunTime] = useState(89);
@@ -20,27 +19,18 @@ const ListSearch = (props) => {
 	}
 
 	const errorHandling = () => {
-		let message =
-			"No movies match your search. Please try again!";
 		Swal.fire({
-			background: "#242424",
+			title: "Error!",
+			text: "No movies match your search. Please try again!",
 			icon: "error",
-			iconColor: "#e50914",
 			confirmButtonText: "OK",
-			confirmButtonColor: "#e50914",
-			allowEnterKey: true,
-			allowEscapeKey: true,
-			html:
-			// Change title to suit the application
-				"<div><h2 style='color:white;margin-bottom: 20px'>Error!</h2><p style='color:white'>" +
-				message +
-				"</p></div>",
 		});
 	};
 
 	const returnRandomMatchedMovie = (array) => {
 		return array[Math.floor(Math.random() * array.length)];
 	};
+
 
 	const handleGenreOption = (e) => {
 		setGenre(e.target.value);
@@ -88,10 +78,10 @@ const ListSearch = (props) => {
 						onChange={handleGenreOption}
 					>
 						{uniqueGenres.map((i) => {
-							return <option value={i}>{i}</option>;
+							return <option key = {`genre${i}`} value={i}>{i}</option>;
 						})}
 					</select>
-					<label htmlFor="movieList"> movie and I have </label>
+					<label htmlFor="movieList"> and I have </label>
 					<select
 						id="runTimes"
 						name="runTimes"
