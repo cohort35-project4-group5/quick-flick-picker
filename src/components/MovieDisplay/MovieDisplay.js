@@ -105,7 +105,7 @@ const MovieDisplay = (props) => {
 	}
 
 	// Setting trailerID to display relevant information
-	const trailerKey = (trailerDetails !== undefined ? trailerDetails.key : null)
+	const trailerKey = trailerDetails !== undefined ? trailerDetails.key : null;
 
 	// Destructuring movieCredits object to display relevant information
 	const actorsObject = cast.slice(0, 5);
@@ -125,11 +125,6 @@ const MovieDisplay = (props) => {
 			<div className="description">
 				<h2>{title}</h2>
 				<p>{overview}</p>
-				<img
-					src={`${imageURL}${poster_path}`}
-					alt={`Poster of ${title}`}
-				/>
-
 				<div className="trailer">
 					<ReactPlayer url={`${youTubeURL}${trailerKey}`} />
 					<div className="movieInfo">
