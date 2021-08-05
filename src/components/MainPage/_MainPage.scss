@@ -44,7 +44,13 @@ img {
   background: #e50914;
   color: white;
 }
+
 .movieSearchBarBtn:hover {
+  cursor: pointer;
+}
+    
+.movieSearchBarBtn:hover,
+.movieSearchBarBtn:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
@@ -60,41 +66,4 @@ img {
 .searchedMoviesList {
   padding: 50px;
   margin-top: -30px;
-}
-
-// Name of Lists on the side
-.userMovieLists ul li {
-  text-align: center;
-  border: 1px solid #e50914;
-  border-radius: 50px;
-  margin-bottom: 10px;
-  min-width: 160px;
-  max-width: 330px;
-  padding: 5px;
-  margin-left: 3px;
-}
-.userMovieLists ul li:hover,
-.userMovieLists ul li:focus { 
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
-.userMovieLists {
-  margin-left: -55px;
-  text-align: center;
-  margin-right: 50px;
-  margin-bottom: 90px;
-  margin-top: 30px;
-}
-
-// My Movie Lists on the side
-.userMovieLists button {
-  background: #e50914;
-  border-radius: 5px;
-}
-
-.userMovieLists button:hover,
-.userMovieLists button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
 }

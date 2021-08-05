@@ -16,7 +16,7 @@ function App() {
           <Route path="/list/:listname" component={SetList} />
         </main>
         <footer>
-          <a href="https://junocollege.com/"></a> Create at Juno College
+          <a href="https://junocollege.com/">Create at Juno College</a>
         </footer>
       </div>
     </Router>
