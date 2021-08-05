@@ -18,6 +18,7 @@ const SetList = (props) => {
 
 	// Get list from main page list of lists, pass as a prop
 	const selectedList = props.match.params.listname;
+	console.log(props);
 
 	const [movieData, setMovieData] = useState([]);
 

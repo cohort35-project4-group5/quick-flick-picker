@@ -13,12 +13,11 @@ function App() {
 				</header>
 				<main>
 					<Route exact path="/" component={MainPage} />
-					<Route path="/list" component={SetList} />
+					<Route path="/list/:listname" component={SetList} />
 				</main>
 				<footer></footer>
 			</div>
 		</Router>
 	);
 }
-
 export default App;
