@@ -6,17 +6,6 @@
   display: flex;
 }
 
-.movieDetailsContainer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 70%;
-  overflow: auto;
-  z-index: 1;
-  background-color: papayawhip;
-}
-
 .searchedMoviesList ul {
   display: flex;
   flex-wrap: wrap;
@@ -80,14 +69,41 @@ img {
   margin-top: -30px;
 }
 
-.movieDetailsContainer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 70%;
-  overflow: auto;
-  z-index: 1;
+.userMovieLists ul li {
+  text-align: center;
+  border: 1px solid #e50914;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  min-width: 160px;
+  max-width: 330px;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.userMovieLists ul li:hover,
+.userMovieLists ul li:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.userMovieLists {
+  margin-left: -55px;
+  text-align: center;
+  margin-right: 50px;
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+.userMovieLists button {
+  background: #e50914;
+  border-radius: 5px;
+}
+
+.userMovieLists button:hover,
+.userMovieLists button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+
 }
 
 .searchedMoviesList ul {
@@ -125,6 +141,7 @@ img {
   width: 15vw;
   height: 5vh;
   border-radius: 5px;
+  padding-left: 10px;
 }
 
 header h1 {
@@ -160,7 +177,7 @@ header h1 {
 
 .movieDetailsContainer {
   background-color: #202020;
-  position: absolute;
+  position: fixed;
   top: 20px;
   margin: 30px;
   padding: 20px;
@@ -168,6 +185,8 @@ header h1 {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 10px;
+  overflow: auto;
+  z-index: 1;
 }
 
 .addMovieForm {
@@ -280,8 +299,9 @@ header h1 {
 
 .listtitle-container {
   width: 80%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 25px;
   margin: 20px 5%;
 }
@@ -437,7 +457,7 @@ header h1 {
 
 .poster h2 {
   padding-left: 20px;
-  text-align: left;
+  text-align: center;
   font-weight: 700;
   font-size: 2rem;
   font-family: "Inter", sans-serif;
@@ -457,7 +477,7 @@ header h1 {
   font-style: italic;
 }
 
-.movieInfo a:hover {
+.movieInfo a:hover .movieInfo a:focus {
   text-decoration: underline;
 }
 

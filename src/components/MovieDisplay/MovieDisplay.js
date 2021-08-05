@@ -121,9 +121,8 @@ const MovieDisplay = (props) => {
 						<p>Genres: {genres.join(", ")}</p>
 						<p>Main Cast: {actors.join(", ")}</p>
 						<p>Director: {directors[0]}</p>
-						<a href={`https://www.imdb.com/title/${imdb_id}`}>
-							More Information on IMDB
-						</a>
+						<button><a href={`https://www.imdb.com/title/${imdb_id}`}>
+							More Information on IMDB </a></button>
 					</div>
 				</div>
 			</div>

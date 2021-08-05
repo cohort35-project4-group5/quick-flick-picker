@@ -41,8 +41,9 @@
 // All the List Titles Displaying
 .listtitle-container {
   width: 80%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 25px;
   margin: 20px 5%;
 }
