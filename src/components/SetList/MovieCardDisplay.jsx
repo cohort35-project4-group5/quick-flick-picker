@@ -34,6 +34,8 @@ function MovieCardDisplay(props) {
 				className="deleteMovie"
 				value={props.id}
 				onClick={handleMovieDelete}
+				onKeyDown={e => e.key === 'Enter' && handleMovieDelete}
+				tabIndex={0}
 			>
 				<span className="deleteMovieSymbol">
 					<ImCross />

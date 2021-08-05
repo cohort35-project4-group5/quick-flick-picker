@@ -3,25 +3,28 @@
 }
 // List Movies in the specific list title
 .posterContainer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .listPoster {
     position: relative;
 	padding: 20px 40px;
 	
+	
 }
 .listMovies {
 	padding: 20px 0;
+	
 }
 
 .listMovies h2 {
-	width: fit-content;
+	text-align: center;
+	font-style: italic;
+	font-size: 2.5rem;
 	margin: 20px;
 	padding : 10px 30px;
-	border: 1px solid white;
-	border-radius: 10px;
+	
 }
 
 .deleteMovie {
@@ -34,9 +37,11 @@
 	background-color: red;
 	border-radius: 50%;
 }
-.deleteMovie:hover {
+.deleteMovie:hover,
+.deleteMovie:focus {
 	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     transform: translateY(-0.25em);
+	cursor: pointer;
 }
 
 .deleteMovieSymbol {

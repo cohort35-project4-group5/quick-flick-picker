@@ -78,7 +78,7 @@ const ListSearch = (props) => {
 						onChange={handleGenreOption}
 					>
 						{uniqueGenres.map((i) => {
-							return <option value={i}>{i}</option>;
+							return <option key = {`genre${i}`} value={i}>{i}</option>;
 						})}
 					</select>
 					<label htmlFor="movieList"> movie and I have </label>
