@@ -365,13 +365,16 @@ header h1 {
 .searchBox select {
   padding: 5px;
   border: none;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .searchBox button {
   background: #e50914;
-  padding: 16px;
   border: none;
   margin-left: 20px;
+  height: 4vh;
+  font-size: 15px;
 }
 
 .poster {
@@ -531,6 +534,22 @@ header h1 {
 
   #player {
     max-width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .searchBox select {
+    margin-top: 10px;
+  }
+
+  .searchBox {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .searchBox button {
+    margin-top: 10px;
   }
 }
 html {
@@ -725,18 +744,6 @@ textarea {
   padding: 0;
 }
 
-.searchBox select {
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-}
-.searchBox button {
-  background: #e50914;
-  border: none;
-  margin-left: 20px;
-  height: 4vh;
-  font-size: 15px;
 [type=number]::-webkit-inner-spin-button,
 [type=number]::-webkit-outer-spin-button {
   height: auto;
@@ -886,25 +893,6 @@ button {
   border-radius: 10px;
 }
 
-  #player {
-    max-width: 100%;
-  }
-}
-@media (max-width: 1200px) {
-  .searchBox select {
-    margin-top: 10px;
-  }
-
-  .searchBox {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .searchBox button {
-    margin-top: 10px;
-  }
 button:hover,
 button:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
