@@ -33,6 +33,10 @@
   position: relative;
 }
 
+.posterImg img {
+  transition: all 0.2s ease-in-out;
+}
+
 .posterImg img:hover,
 .posterImg img:focus {
   transform: scale(1.15);
@@ -58,7 +62,6 @@
   margin: 30px;
   padding: 20px;
   height: fit-content;
-  border-radius: 10px;
   overflow: auto;
   z-index: 1;
   text-align: center;

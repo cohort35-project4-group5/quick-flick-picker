@@ -50,6 +50,10 @@
   position: relative;
 }
 
+.posterImg img {
+  transition: all 0.2s ease-in-out;
+}
+
 .posterImg img:hover,
 .posterImg img:focus {
   transform: scale(1.15);
@@ -77,7 +81,6 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  border-radius: 10px;
   overflow: auto;
   z-index: 1;
   text-align: center;
@@ -506,10 +509,10 @@
 }
 @media (max-width: 1050px) {
   .movieDetailsContainer {
-    top: 40px;
+    top: 0;
     width: 100%;
-    left: -3%;
-    max-height: 90vh;
+    left: -30px;
+    max-height: 100vh;
   }
 
   .trailer {
@@ -894,8 +897,7 @@ button {
 
 button:hover,
 button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+  transform: translateY(-0.1em);
   cursor: pointer;
 }
 
