@@ -18,7 +18,7 @@ function App() {
         </main>
 
         <footer>
-          <a href="https://junocollege.com/">Create at Juno College</a>
+          <a href="https://junocollege.com/">Created at Juno College</a>
         </footer>
       </div>
     </Router>
