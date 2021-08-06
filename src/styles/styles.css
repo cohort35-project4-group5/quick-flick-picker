@@ -182,8 +182,15 @@ textarea {
   font: inherit;
 }
 
-details, menu {
-  display: block;
+@media (max-width: 870px) {
+  .mainPageFlexContainer {
+    flex-direction: column-reverse;
+  }
+
+  .userMovieLists {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 summary {
