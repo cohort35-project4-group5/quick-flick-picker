@@ -70,6 +70,7 @@
   background-color: #202020;
   position: fixed;
   width: 80%;
+  max-width: 940px;
   top: 20px;
   margin: 30px;
   padding: 20px;
@@ -80,6 +81,7 @@
   overflow: auto;
   z-index: 1;
   text-align: center;
+  border: 1px solid #e50914;
 }
 
 .addMovieForm {
@@ -894,6 +896,7 @@ button:hover,
 button:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
+  cursor: pointer;
 }
 
 .App {
