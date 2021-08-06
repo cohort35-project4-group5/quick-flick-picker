@@ -89,7 +89,7 @@ const SetList = (props) => {
 	};
 
 	return (
-		<div className="wrapper">
+		<div>
 			<ListSearch
 				genres={genres}
 				runTimes={runTimes}
