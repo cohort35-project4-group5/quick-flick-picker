@@ -4,6 +4,10 @@
   max-width: 1080px;
 }
 
+img {
+  width: 100%;
+}
+
 html {
   background-color: $backgroundColor;
   font-family: $bodyFont;

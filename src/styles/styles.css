@@ -37,10 +37,6 @@
   width: 200px;
 }
 
-img {
-  width: 100%;
-}
-
 .movieListsSelect {
   width: 200px;
   height: 30px;
@@ -828,6 +824,10 @@ body {
   width: 90%;
   margin: 0 auto;
   max-width: 1080px;
+}
+
+img {
+  width: 100%;
 }
 
 html {
