@@ -1,5 +1,16 @@
-.App {   
-    color: $whiteColor;
-    background: linear-gradient(#121212, #212121);
-    margin-top: -20px;
+.App {
+  color: $whiteColor;
+  background: linear-gradient(#121212, #212121);
+  margin-top: -20px;
+}
+
+header h1 {
+  padding-top: 80px;
+  padding: 20px 40px;
+}
+
+footer {
+  text-align: center;
+  background: black;
+  padding: 5px;
 }
