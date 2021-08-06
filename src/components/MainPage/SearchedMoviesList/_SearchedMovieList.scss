@@ -20,6 +20,10 @@
   width: 200px;
 }
 
+img {
+  width: 100%;
+}
+
 .movieListsSelect {
   width: 200px;
   height: 30px;
@@ -28,7 +32,8 @@
 }
 
 header h1 {
-  padding: 40px;
+  padding-top: 80px;
+  padding: 30px;
 }
 
 .poster {

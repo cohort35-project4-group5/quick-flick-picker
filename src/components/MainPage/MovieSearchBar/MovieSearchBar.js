@@ -21,7 +21,6 @@ const MovieSearchBar = (props) => {
         <input
           type="text"
           id="movieSearchInput"
-          className="movieSearchInput"
           placeholder="Movie Title..."
           onChange={handleChange}
           autoComplete="off"
