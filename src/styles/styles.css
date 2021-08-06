@@ -48,11 +48,6 @@ img {
   padding-left: 10px;
 }
 
-header h1 {
-  padding-top: 80px;
-  padding: 30px;
-}
-
 .poster {
   margin-left: 30px;
   margin-right: 20px;
@@ -371,6 +366,7 @@ header h1 {
   background: #e50914;
   border: none;
   margin-left: 20px;
+  margin-bottom: 10px;
   height: 4vh;
   font-size: 15px;
 }
@@ -430,11 +426,14 @@ header h1 {
   border: none;
   margin-right: 10px;
   border-radius: 5px;
-  width: 220px;
+}
+
+.movieSearchInput {
+  width: 300px;
 }
 
 .movieSearchBarBtn {
-  width: 100px;
+  width: 150px;
   background: #e50914;
   color: white;
   margin-top: 10px;
@@ -901,4 +900,15 @@ button:focus {
   color: #F2F2F2;
   background: linear-gradient(#121212, #212121);
   margin-top: -20px;
+}
+
+header h1 {
+  padding-top: 80px;
+  padding: 20px 40px;
+}
+
+footer {
+  text-align: center;
+  background: black;
+  padding: 5px;
 }/*# sourceMappingURL=styles.css.map */

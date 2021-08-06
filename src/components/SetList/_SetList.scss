@@ -1,79 +1,78 @@
 .SetList {
-    display: flex;
+  display: flex;
 }
 // List Movies in the specific list title
 .posterContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .listPoster {
-    position: relative;
-	padding: 20px 40px;
+  position: relative;
+  padding: 20px 40px;
 }
 
 .listMovies {
-	padding: 30px 0 40px 0;
+  padding: 30px 0 40px 0;
 }
 
 .listMovies h2 {
-	text-align: center;
-	font-style: italic;
-	font-size: 2.5rem;
-	margin: 20px;
-	padding: 10px 0 20px 0;	
+  text-align: center;
+  font-style: italic;
+  font-size: 2.5rem;
+  margin: 20px;
+  padding: 10px 0 20px 0;
 }
 
 .cameraIcon {
-	margin: 0 10px 0 20px;
+  margin: 0 10px 0 20px;
 }
 
 .deleteMovie {
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	color: white;
-	right: 10%;
-	top: 0;
-	background-color: red;
-	border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  color: white;
+  right: 10%;
+  top: 0;
+  background-color: red;
+  border-radius: 50%;
 }
 
 .deleteMovie:hover,
 .deleteMovie:focus {
-	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
-	cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  cursor: pointer;
 }
 
 .deleteMovieSymbol {
-	position: absolute;
-	top: 20%;
-	right: 23%;
+  position: absolute;
+  top: 20%;
+  right: 23%;
 }
 
-// Search Box 
+// Search Box
 .searchBox {
-	padding: 0 30px;
-	border-bottom: 1px solid white;
-	color: white;
-	font-size: 22px;
+  padding: 0 30px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 22px;
 }
 
 .searchBox select {
-	padding: 5px;
-	border: none;
-	border-radius: 5px;
-	font-size: 20px;
-	
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .searchBox button {
-	background: #e50914;
-	border: none;
-	margin-left: 20px;
-	height: 4vh;
-	font-size: 15px;
+  background: #e50914;
+  border: none;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  height: 4vh;
+  font-size: 15px;
 }
