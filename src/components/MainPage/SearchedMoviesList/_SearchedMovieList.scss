@@ -13,9 +13,6 @@
 img {
 	width: 100%;
 }
-
-
-
 .movieListsSelect {
 	width: 15vw;
 	height: 5vh;
@@ -28,11 +25,6 @@ header h1 {
 	padding: 30px;
 }
 
-// Poster Container
-
-// .posterContainer {
-//   justify-content: start !important;
-// }
 .poster {
 	margin-left: 30px;
 	margin-right: 20px;
@@ -58,7 +50,7 @@ header h1 {
 .movieDetailsContainer {
 	background-color: rgb(32, 32, 32);
 	position: fixed;
-	top: 20px;
+	top: 0;
 	margin: 30px;
 	padding: 20px;
 	height: fit-content;
@@ -96,139 +88,7 @@ header h1 {
 	font-size: 23px;
 }
 
-@media (max-width: 950px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-}
-
-@media (max-width: 1050px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 100%;
-    left: -3%;
-    text-align: center;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
-  .html5-video-player {
-    position: relative;
-  }
-
-  #player {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 950px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-}
-
-@media (max-width: 870px) {
-  .mainPageFlexContainer {
-    flex-direction: column-reverse;
-  }
-  .userMovieLists {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 850px) {
-  .movieInfo {
-    width: 80%;
-  }
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
-  .closeBtn {
-    top: 45px;
-    right: 15px;
-  }
-
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
-  .addMovieForm {
-    margin-bottom: 26px;
-  }
-
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
-}
-
-@media (max-width: 525px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
-  .closeBtn {
-    top: 45px;
-    right: 15px;
-  }
-
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
-  .addMovieForm {
-    margin-bottom: 26px;
-  }
-
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
+.closeBtn:hover,
+.closeBtn:focus {
+  cursor: pointer;
 }

@@ -39,3 +39,79 @@
     text-decoration: underline;
 }
 
+
+// Media Query 
+@media (max-width: 1050px) {
+        .movieDetailsContainer {
+        top: 40px;
+        width: 100%;
+        left: -3%;
+        text-align: center;
+        max-height: 90vh;
+        }
+    
+        .trailer {
+        flex-direction: column;
+        max-width: 100%;
+        }
+    
+        .movieInfo {
+        width: auto;
+        margin: 30px;
+        text-align: left;
+        font-style: italic;
+        flex-grow: 1;
+        }
+        .html5-video-player {
+        position: relative;
+        }
+    
+        #player {
+        max-width: 100%;
+        }
+    }
+    
+    @media (max-width: 950px) {
+        .movieDetailsContainer {
+        top: 40px;
+        width: 91%;
+        left: -4%;
+        }
+        
+    @media (max-width: 870px) {
+        .mainPageFlexContainer {
+        flex-direction: column-reverse;
+        }
+        .userMovieLists {
+        display: flex;
+        justify-content: center;
+        }
+    }
+    
+    
+    }
+    @media (max-width: 850px) {
+        .movieInfo {
+        width: 80%;
+        }
+    
+        .trailer {
+        flex-direction: column;
+        max-width: 90%;
+        }
+    
+        .closeBtn {
+        top: 45px;
+        right: 15px;
+        }
+    
+        .trailer div:nth-child(1) {
+        max-width: 100%;
+        margin: auto;
+        margin-left: 21px;
+        }
+        .addMovieForm {
+        margin-bottom: 26px;
+        }
+    
+    }
