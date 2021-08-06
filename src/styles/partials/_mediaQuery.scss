@@ -50,20 +50,12 @@
   }
 }
 
-@media (max-width: 950px) {
-  // .movieDetailsContainer {
-  //   top: 40px;
-  //   width: 91%;
-  //   left: -4%;
-  // }
-}
-
 @media (max-width: 1050px) {
   .movieDetailsContainer {
-    top: 40px;
+    top: 0;
     width: 100%;
-    left: -3%;
-    max-height: 90vh;
+    left: -30px;
+    max-height: 100vh;
   }
 
   .trailer {
@@ -89,7 +81,7 @@
   .searchBox select {
     margin-top: 10px;
   }
-  
+
   .searchBox {
     display: flex;
     text-align: center;

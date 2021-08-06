@@ -33,6 +33,10 @@
   position: relative;
 }
 
+.posterImg img {
+  transition: all 0.2s ease-in-out;
+}
+
 .posterImg img:hover,
 .posterImg img:focus {
   transform: scale(1.15);
@@ -53,15 +57,15 @@
   background-color: rgb(32, 32, 32);
   position: fixed;
   width: 80%;
-  // left: 50px;
+  max-width: 940px;
   top: 20px;
   margin: 30px;
   padding: 20px;
   height: fit-content;
-  border-radius: 10px;
   overflow: auto;
   z-index: 1;
   text-align: center;
+  border: 1px solid #e50914;
 }
 
 // Add Movie Form - to add the movies to specific list
