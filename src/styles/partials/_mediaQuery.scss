@@ -1,23 +1,15 @@
+@media (max-width: 500px) {
+  .addToList {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 550px) {
-  h2 {
-    font-size: 20px;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
   .closeBtn {
     top: 45px;
     right: 15px;
   }
 
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
   .addMovieForm {
     margin-bottom: 26px;
   }
@@ -29,6 +21,10 @@
   }
   .movieSearchBarBtn {
     width: 100%;
+  }
+
+  .poster h2 {
+    font-size: 2rem;
   }
 }
 
@@ -44,21 +40,11 @@
 }
 
 @media (max-width: 850px) {
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
   .closeBtn {
     top: 45px;
     right: 15px;
   }
 
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
   .addMovieForm {
     margin-bottom: 26px;
   }
@@ -73,16 +59,15 @@
 }
 
 @media (max-width: 1050px) {
-  // .movieDetailsContainer {
-  //   top: 40px;
-  //   width: 100%;
-  //   left: -3%;
-  //   text-align: center;
-  // }
+  .movieDetailsContainer {
+    top: 40px;
+    width: 100%;
+    left: -3%;
+    max-height: 90vh;
+  }
 
   .trailer {
     flex-direction: column;
-    max-width: 100%;
   }
 
   .movieInfo {

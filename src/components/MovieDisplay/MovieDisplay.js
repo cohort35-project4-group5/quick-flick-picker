@@ -85,8 +85,6 @@ const MovieDisplay = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.movieID]);
 
-  // console.log(movieDetails, trailerDetails, cast, crew);
-
   // Destructuring movieDetails object to display relevant information
   const { title, imdb_id, overview, poster_path } = movieDetails;
 

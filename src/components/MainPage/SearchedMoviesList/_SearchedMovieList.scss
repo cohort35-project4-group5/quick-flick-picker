@@ -21,8 +21,8 @@
 }
 
 .movieListsSelect {
-  width: 15vw;
-  height: 5vh;
+  width: 200px;
+  height: 30px;
   border-radius: 5px;
   padding-left: 10px;
 }
@@ -58,6 +58,8 @@ header h1 {
 .movieDetailsContainer {
   background-color: rgb(32, 32, 32);
   position: fixed;
+  width: 80%;
+  // left: 50px;
   top: 20px;
   margin: 30px;
   padding: 20px;
@@ -65,6 +67,7 @@ header h1 {
   border-radius: 10px;
   overflow: auto;
   z-index: 1;
+  text-align: center;
 }
 
 // Add Movie Form - to add the movies to specific list
@@ -74,11 +77,13 @@ header h1 {
 
 .addToList {
   background: transparent;
-  padding: 14px 40px;
+  width: 200px;
+  padding: 5px 40px;
   color: white;
   border: 1px solid #e50914;
   border-radius: 5px;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .addToList:hover,
