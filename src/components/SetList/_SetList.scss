@@ -65,13 +65,17 @@
 .searchBox select {
 	padding: 5px;
 	border: none;
+	border-radius: 5px;
+	font-size: 20px;
+	
 }
 
 .searchBox button {
 	background: #e50914;
-	padding: 16px;
 	border: none;
 	margin-left: 20px;
+	height: 4vh;
+	font-size: 15px;
 }
 
 // Return Home 
