@@ -1,0 +1,89 @@
+.SetList {
+    display: flex;
+}
+// List Movies in the specific list title
+.posterContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+
+.listPoster {
+    position: relative;
+	padding: 20px 40px;
+}
+
+.listMovies {
+	padding: 30px 0 40px 0;
+}
+
+.listMovies h2 {
+	text-align: center;
+	font-style: italic;
+	font-size: 2.5rem;
+	margin: 20px;
+	padding: 10px 0 20px 0;	
+}
+
+.cameraIcon {
+	margin: 0 10px 0 20px;
+}
+
+.deleteMovie {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	right: 10%;
+	top: 0;
+	background-color: red;
+	border-radius: 50%;
+}
+
+.deleteMovie:hover,
+.deleteMovie:focus {
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+	cursor: pointer;
+}
+
+.deleteMovieSymbol {
+	position: absolute;
+	top: 20%;
+	right: 23%;
+}
+
+// Search Box 
+.searchBox {
+	margin: 10px 20px 0 20px;
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 22px;
+}
+
+.searchBox select {
+	padding: 5px;
+	border: none;
+}
+
+.searchBox button {
+	background: #e50914;
+	padding: 16px;
+	border: none;
+	margin-left: 20px;
+}
+
+// Return Home 
+// .returnHome {
+// 	width: 7.5%;
+// 	margin: 20px;
+// 	padding : 0 30px;
+// 	border: 1px solid white;
+// 	border-radius: 10px;
+// }
+
+// .returnHome:hover {
+// 	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+//     transform: translateY(-0.25em);
+// }

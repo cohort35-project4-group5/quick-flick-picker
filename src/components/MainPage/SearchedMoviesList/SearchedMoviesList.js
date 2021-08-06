@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import MovieDisplay from "../../MovieDisplay/MovieDisplay";
+import firebase from "../../../firebase";
+import { FaTimesCircle } from 'react-icons/fa';
+
 
 const SearchedMoviesList = (props) => {
   const [selectedList, setSelectedList] = useState("");
@@ -10,6 +14,10 @@ const SearchedMoviesList = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const dbRef = firebase.database().ref();
+    if (selectedList !== "") {
+      dbRef.child(selectedList).child("movieList").push(selectedMovie);
+    }
   };
 
   const selectMovie = (selectedKey) => {
@@ -29,17 +37,17 @@ const SearchedMoviesList = (props) => {
       {selectedMovie !== "" ? (
         <div className="movieDetailsContainer">
           <div>
-            {/* Insert Josh's movie display component */}
-            <p>Display Movie ID: {selectedMovie}</p>
+            <MovieDisplay movieID={selectedMovie} />
+
             <form
               className="addMovieForm"
               action="submit"
               onSubmit={handleSubmit}
             >
               <label htmlFor="movieListsSelect" className="sr-only">
-                Category:
               </label>
               <select
+        
                 name="movieListsSelect"
                 id="movieListsSelect"
                 className="movieListsSelect"
@@ -48,7 +56,7 @@ const SearchedMoviesList = (props) => {
                 required
               >
                 <option disabled value="">
-                  Select Category
+                  Select List
                 </option>
                 {props.movieLists.map((movieList, i) => {
                   return (
@@ -58,9 +66,9 @@ const SearchedMoviesList = (props) => {
                   );
                 })}
               </select>
-              <input type="submit" value="Add to List" />
+              <input className="addToList" type="submit" value="Add to List" />
             </form>
-            <button onClick={closeMovieDetails}>Exit</button>
+            <button className="closeBtn" onClick={closeMovieDetails}><FaTimesCircle/></button>
           </div>
         </div>
       ) : (
@@ -72,12 +80,14 @@ const SearchedMoviesList = (props) => {
             <li
               key={`movie${i}`}
               className="movieContainer"
-              onClick={() => selectMovie(movieObj.id)}
             >
+
               {/* <p>ID: {movieObj.id}</p> */}
-              <div className="posterImg">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
+              <div className="posterImg" >
+                <img onClick={() => selectMovie(movieObj.id)}
+                  onKeyDown={e => e.key === 'Enter' && selectMovie(movieObj.id)}
+                  tabIndex={0}
+    src={`https://image.tmdb.org/t/p/w500${movieObj.poster_path}`}
                   alt={`Poster of ${movieObj.title}`}
                 />
               </div>

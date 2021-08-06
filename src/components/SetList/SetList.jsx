@@ -1,30 +1,21 @@
 import firebase from "../../firebase.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-// npm install sweetalert2
-// import Swal from 'sweetalert2'
-import Swal from "sweetalert2";
 import MovieCardDisplay from "./MovieCardDisplay.jsx";
-import "./SetList.css";
 import ListSearch from "../ListSearch/ListSearch.jsx";
+import MovieDisplay from "../MovieDisplay/MovieDisplay.js";
+import ReturnHome from "./ReturnHome.jsx";
+import { ImVideoCamera } from "react-icons/im";
 
-const SetList = () => {
+const SetList = (props) => {
 	const [list, setList] = useState([]);
+	const [matchedMovie, setMatchedMovie] = useState("");
+	const [newSearch, setNewSearch] = useState(false);
 
 	// Get list from main page list of lists, pass as a prop
-	const selectedList = "Oscar";
+	const selectedList = props.match.params.listname;
 
 	const [movieData, setMovieData] = useState([]);
-
-	const errorHandling = () => {
-		Swal.fire({
-			title: "Error!",
-			text: "Unable to find that movie. Please try again!",
-			icon: "error",
-			confirmButtonText: "OK",
-		});
-	};
 
 	useEffect(function () {
 		const dbRef = firebase.database().ref();
@@ -43,18 +34,26 @@ const SetList = () => {
 		});
 	}, []);
 
+	// Figure out ListKey to pass listkey value to movieCardDisplay;
+	let targetKey = "";
 	let listToDisplay = [];
 	for (const item in list) {
 		if (list[item].listName === selectedList) {
 			listToDisplay.push(list[item].movieList);
+			targetKey = list[item].key;
 		}
 	}
 	listToDisplay = listToDisplay.shift();
-
-	const IDArray = [];
+	
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	let IDArray = [];
 	for (const movie in listToDisplay) {
 		IDArray.push(listToDisplay[movie]);
 	}
+	// Filter IDArray to prevent duplicates being added to list
+	IDArray = IDArray.filter((item, pos) => {
+		return IDArray.indexOf(item) === pos;
+	});
 
 	useEffect(() => {
 		let movieObjectsArray = [];
@@ -71,35 +70,62 @@ const SetList = () => {
 				setMovieData(movieObjectsArray);
 			}
 		});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [list]);
-	
+
 	const genres = [];
 	movieData.map((i) => {
-		genres.push(i.genres);
+		return genres.push(i.genres);
 	});
-	// console.log(genres);
 
 	const runTimes = [];
 	movieData.map((i) => {
-		runTimes.push(i.runtime);
+		return runTimes.push(i.runtime);
 	});
-	// console.log(runTimes);
+
+	const returnValue = (value) => {
+		setMatchedMovie(value);
+		setNewSearch(true);
+	};
 
 	return (
 		<div className="wrapper">
-			<ListSearch genres={genres} runTimes={runTimes}/>
-			<h2>{selectedList}</h2>
-			<div className="posterContainer">
-				{movieData.map((i) => {
-					return (
-						<MovieCardDisplay
-							posterPath={i.poster_path}
-							altText={i.title}
-							key={i.id}
-						/>
-					);
-				})}
-			</div>
+			<ListSearch
+				genres={genres}
+				runTimes={runTimes}
+				ids={IDArray}
+				returnValue={returnValue}
+			/>
+
+			{newSearch === false ? (
+				<div className="listMovies">
+					<h2>
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+						{selectedList}
+						<span className="cameraIcon">
+							<ImVideoCamera />
+						</span>
+					</h2>
+					<div className="posterContainer">
+						{movieData.map((i) => {
+							return (
+								<MovieCardDisplay
+									posterPath={i.poster_path}
+									altText={i.title}
+									selectedList={targetKey}
+									list={listToDisplay}
+									id={i.id}
+									key={i.id}
+								/>
+							);
+						})}
+					</div>
+				</div>
+			) : (
+				<MovieDisplay movieID={matchedMovie} />
+			)}
 		</div>
 	);
 };

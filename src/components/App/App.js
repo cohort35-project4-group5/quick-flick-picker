@@ -1,26 +1,26 @@
-
 import SetList from "../SetList/SetList";
-import MovieDisplay from "../MovieDisplay/MovieDisplay"
 import MainPage from "../MainPage/MainPage";
-import ListModal from "../ListModal/ListModal";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
 	return (
-		<div className="App">
+		<Router>
+		<div className="App wrapper">
 			<header>
-				<h1>Quick Flick Picker</h1>
+			<Link to="/">
+				<h1>QuickFlickPix</h1>
+			</Link>
 			</header>
-
 			<main>
-				<MovieDisplay />
-        <MainPage />
-				<SetList/>
-        <ListModal />
+			<Route exact path="/" component={MainPage} />
+			<Route path="/list/:listname" component={SetList} />
 			</main>
-
-			<footer></footer>
+			<footer>
+			<a href="https://junocollege.com/">Create at Juno College</a>
+			</footer>
 		</div>
+		</Router>
 	);
-}
 
+}
 export default App;
