@@ -4,8 +4,68 @@
   display: flex;
 }
 
+.searchedMoviesList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
 .posterImg {
   width: 200px;
+}
+
+img {
+  width: 100%;
+}
+
+.userMovieLists {
+  min-width: 200px;
+}
+
+.movieSearchBar {
+  padding: 40px;
+  padding-top: 70px;
+  background: #242424;
+}
+.movieSearchBar form {
+  margin: 50px 0;
+}
+
+.movieSearchBar input {
+  padding: 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius : 5px;
+}
+.movieSearchBarBtn {
+  background: #e50914;
+  color: white;
+}
+
+.movieSearchBarBtn:hover {
+  cursor: pointer;
+}
+    
+.movieSearchBarBtn:hover,
+.movieSearchBarBtn:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.movieSearchBar label.sr-only {
+  color: white;
+  font-size: 22px;
+  margin-top: 10px;
+  padding-top: 3px;
+  margin-right: 10px;
+}
+
+.searchedMoviesList {
+  padding: 50px;
+  margin-top: -30px;
 }
 
 // Name of Lists on the side
@@ -20,7 +80,7 @@
   margin-left: 3px;
 }
 .userMovieLists ul li:hover,
-.userMovieLists ul li:focus {
+.userMovieLists ul li:focus { 
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }

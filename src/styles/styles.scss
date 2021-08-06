@@ -1,11 +1,10 @@
-@import "../styles/partials/fonts";
-@import "../styles/partials/setup";
-@import "../styles/partials/generic";
-@import "../components/App/App";
 @import "../components/MainPage/MainPage";
 @import "../components/MainPage/SearchedMoviesList/SearchedMovieList";
 @import "../components/MainPage/UserMovieLists/UserMovieLists";
 @import "../components/ListModal/ListModal";
+@import "../styles/partials/fonts";
 @import "../components/SetList/SetList";
 @import "../components/MovieDisplay/MovieDisplay";
-@import "../components/MainPage/MovieSearchBar/MovieSearchBar";
+@import "../styles/partials/setup";
+@import "../styles/partials/generic";
+@import "../components/App/App";
