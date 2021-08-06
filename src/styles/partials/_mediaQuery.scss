@@ -1,0 +1,86 @@
+@media (max-width: 500px) {
+  .addToList {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movieSearchInput {
+    width: 100%;
+  }
+  .movieSearchBarBtn {
+    width: 100%;
+  }
+
+  .poster h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .mainPageFlexContainer {
+    flex-direction: column-reverse;
+  }
+  .userMovieLists {
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+}
+
+@media (max-width: 950px) {
+  // .movieDetailsContainer {
+  //   top: 40px;
+  //   width: 91%;
+  //   left: -4%;
+  // }
+}
+
+@media (max-width: 1050px) {
+  .movieDetailsContainer {
+    top: 40px;
+    width: 100%;
+    left: -3%;
+    max-height: 90vh;
+  }
+
+  .trailer {
+    flex-direction: column;
+  }
+
+  .movieInfo {
+    width: 81%;
+    margin: 30px;
+    text-align: left;
+    font-style: italic;
+  }
+  .html5-video-player {
+    position: relative;
+  }
+
+  #player {
+    max-width: 100%;
+  }
+}

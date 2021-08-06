@@ -1,62 +1,72 @@
 .wrapper {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1080px;
-}
-html {
-    background-color: $backgroundColor;
-    font-family: $bodyFont;
-    margin: 10px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1080px;
 }
 
+html {
+  background-color: $backgroundColor;
+  font-family: $bodyFont;
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: $bodyFont;
+}
 
 h1 {
-    font-weight: 700;
-    font-family: $headerFont;
-    color: $redColor;
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
-    background-clip: text;
-    -webkit-background-clip: text;
+  font-weight: 700;
+  font-family: $headerFont;
+  color: $redColor;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 h1:hover {
-    text-decoration: underline;
-    color: transparent;
-    transition: 500ms ease;
-
-}
-body {
-    margin: 0px;
-    padding: 0px;
-    font-family:$bodyFont;
+  text-decoration: underline;
+  color: transparent;
+  transition: 500ms ease;
 }
 
-h2, h3 {
-    color: $whiteColor;
-    font-family:  $bodyFont;
+h2,
+h3 {
+  color: $whiteColor;
+  font-family: $bodyFont;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 li {
-    color: $whiteColor;
-    list-style-type: none;
+  color: $whiteColor;
+  list-style-type: none;
 }
 
 a {
-    color: $whiteColor;
-    text-decoration: none;
+  color: $whiteColor;
+  text-decoration: none;
 }
 button {
-    background: transparent;
-    padding: 14px 40px;
-    color: white;
-    border: 1px solid #e50914;
-    border-radius: 5px;
+  background: transparent;
+  padding: 5px 40px;
+  color: white;
+  border: 1px solid #e50914;
+  border-radius: 10px;
 }
 
 button:hover,
 button:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }

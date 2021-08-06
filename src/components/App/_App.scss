@@ -1,5 +1,11 @@
-.App {   
-    color: $whiteColor;
-    background: linear-gradient(#121212, #212121);
-    margin-top: -20px;
+.App {
+  color: $whiteColor;
+  background: linear-gradient(#121212, #212121);
+  margin-top: -20px;
+}
+
+footer {
+  text-align: center;
+  background-color: black;
+  padding: 5px 0;
 }
