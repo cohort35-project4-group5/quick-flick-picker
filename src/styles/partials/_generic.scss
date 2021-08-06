@@ -3,6 +3,7 @@
   margin: 0 auto;
   max-width: 1080px;
 }
+
 html {
   background-color: $backgroundColor;
   font-family: $bodyFont;
@@ -11,6 +12,12 @@ html {
 
 img {
   width: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: $bodyFont;
 }
 
 h1 {
@@ -25,11 +32,6 @@ h1:hover {
   text-decoration: underline;
   color: transparent;
   transition: 500ms ease;
-}
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: $bodyFont;
 }
 
 h2,
@@ -52,10 +54,10 @@ a {
 }
 button {
   background: transparent;
-  padding: 14px 40px;
+  padding: 5px 40px;
   color: white;
   border: 1px solid #e50914;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 button:hover,

@@ -182,15 +182,8 @@ textarea {
   font: inherit;
 }
 
-@media (max-width: 870px) {
-  .mainPageFlexContainer {
-    flex-direction: column-reverse;
-  }
-
-  .userMovieLists {
-    display: flex;
-    justify-content: center;
-  }
+details, menu {
+  display: block;
 }
 
 summary {
@@ -256,6 +249,12 @@ img {
   width: 100%;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Inter", sans-serif;
+}
+
 h1 {
   font-weight: 700;
   font-family: "Inter", sans-serif;
@@ -269,12 +268,6 @@ h1:hover {
   text-decoration: underline;
   color: transparent;
   transition: 500ms ease;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Inter", sans-serif;
 }
 
 h2,
@@ -299,10 +292,10 @@ a {
 
 button {
   background: transparent;
-  padding: 14px 40px;
+  padding: 5px 40px;
   color: white;
   border: 1px solid #e50914;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 button:hover,
@@ -331,63 +324,13 @@ footer {
   width: 200px;
 }
 
-.userMovieLists ul li {
-  text-align: center;
-  border: 1px solid #e50914;
-  border-radius: 50px;
-  margin-bottom: 10px;
-  min-width: 160px;
-  max-width: 330px;
-  padding: 5px;
-  margin-left: 3px;
-}
-
-.userMovieLists ul li:hover,
-.userMovieLists ul li:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
-.userMovieLists {
-  margin-left: -55px;
-  text-align: center;
-  margin-right: 50px;
-  margin-bottom: 90px;
-  margin-top: 30px;
-}
-
-.userMovieLists button {
-  background: #e50914;
-  border-radius: 5px;
-}
-
-.userMovieLists button:hover,
-.userMovieLists button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
-@media (max-width: 800px) {
-  .mainPageFlexContainer {
-    flex-direction: column-reverse;
-  }
-
-  .userMovieLists {
-    display: flex;
-    justify-content: center;
-  }
-}
 .searchedMoviesList ul {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  justify-content: space-evenly;
   align-content: center;
-}
-
-.searchedMoviesList ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  align-items: center;
 }
 
 .userMovieLists {
@@ -478,137 +421,6 @@ header h1 {
   font-size: 23px;
 }
 
-@media (max-width: 950px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-}
-@media (max-width: 1050px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 100%;
-    left: -3%;
-    text-align: center;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
-
-  .html5-video-player {
-    position: relative;
-  }
-
-  #player {
-    max-width: 100%;
-  }
-}
-@media (max-width: 950px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-}
-@media (max-width: 870px) {
-  .mainPageFlexContainer {
-    flex-direction: column;
-  }
-}
-@media (max-width: 850px) {
-  .movieInfo {
-    width: 80%;
-  }
-
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: -4%;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
-  .closeBtn {
-    top: 45px;
-    right: 15px;
-  }
-
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
-
-  .addMovieForm {
-    margin-bottom: 26px;
-  }
-
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
-}
-@media (max-width: 525px) {
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .trailer {
-    flex-direction: column;
-    max-width: 249px;
-  }
-
-  .closeBtn {
-    top: 45px;
-    right: 15px;
-  }
-
-  .trailer div:nth-child(1) {
-    max-width: 100%;
-    margin: auto;
-    margin-left: 21px;
-  }
-
-  .addMovieForm {
-    margin-bottom: 26px;
-  }
-
-  .movieDetailsContainer {
-    top: 40px;
-    width: 91%;
-    left: 1%;
-  }
-
-  .movieInfo {
-    width: 81%;
-    margin: 30px;
-    text-align: left;
-    font-style: italic;
-  }
-}
 .userMovieLists ul li {
   text-align: center;
   border: 1px solid #e50914;
@@ -617,7 +429,6 @@ header h1 {
   min-width: 160px;
   max-width: 330px;
   padding: 5px;
-  margin-left: 3px;
 }
 
 .userMovieLists li:hover {
@@ -630,21 +441,41 @@ header h1 {
   transform: translateY(-0.25em);
 }
 
+.userMovieLists button:hover {
+  cursor: pointer;
+}
+
+.userMovieLists button:hover,
+.userMovieLists button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.userMovieLists ul li {
+  text-align: center;
+  border: 1px solid #e50914;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.userMovieLists ul li:hover,
+.userMovieLists ul li:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
 .userMovieLists {
-  margin-left: -55px;
   text-align: center;
   margin-right: 50px;
-  margin-bottom: 90px;
-  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .userMovieLists button {
   background: #e50914;
   border-radius: 5px;
-}
-
-.userMovieLists button:hover {
-  cursor: pointer;
 }
 
 .userMovieLists button:hover,
@@ -905,6 +736,7 @@ header h1 {
   width: 100px;
   background: #e50914;
   color: white;
+  margin-top: 10px;
 }
 
 .movieSearchBarBtn:hover {
@@ -923,4 +755,92 @@ header h1 {
   margin-top: 10px;
   padding-top: 3px;
   margin-right: 10px;
+}
+
+@media (max-width: 550px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .trailer {
+    flex-direction: column;
+    max-width: 249px;
+  }
+
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .trailer div:nth-child(1) {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 21px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .movieSearchInput {
+    width: 100%;
+  }
+
+  .movieSearchBarBtn {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .mainPageFlexContainer {
+    flex-direction: column-reverse;
+  }
+
+  .userMovieLists {
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+  }
+}
+@media (max-width: 850px) {
+  .trailer {
+    flex-direction: column;
+    max-width: 249px;
+  }
+
+  .closeBtn {
+    top: 45px;
+    right: 15px;
+  }
+
+  .trailer div:nth-child(1) {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 21px;
+  }
+
+  .addMovieForm {
+    margin-bottom: 26px;
+  }
+}
+@media (max-width: 1050px) {
+  .trailer {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .movieInfo {
+    width: 81%;
+    margin: 30px;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .html5-video-player {
+    position: relative;
+  }
+
+  #player {
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */
