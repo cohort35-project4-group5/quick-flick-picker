@@ -1,0 +1,41 @@
+.movieSearchBar {
+  padding: 20px 40px;
+  background: #242424;
+}
+.movieSearchBar form {
+  margin: 20px 0;
+}
+
+.movieSearchBar input {
+  padding: 5px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.movieSearchInput {
+  width: 270px;
+}
+.movieSearchBarBtn {
+  width: 100px;
+  background: #e50914;
+  color: white;
+}
+
+.movieSearchBarBtn:hover {
+  cursor: pointer;
+}
+
+.movieSearchBarBtn:hover,
+.movieSearchBarBtn:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.movieSearchBar label.sr-only {
+  color: white;
+  font-size: 22px;
+  margin-top: 10px;
+  padding-top: 3px;
+  margin-right: 10px;
+}
