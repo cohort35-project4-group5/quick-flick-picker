@@ -135,12 +135,12 @@ function ListModal(props) {
           <FaTimesCircle />
         </button>
         <h2>Select a list </h2>
-        <ul className="listtitle-container">
+        <ul className="listTitleContainer">
           {selectedList.map((listObject) => {
             const defferedFunction = () => handleDelete(listObject.key);
             return (
               <li key={listObject.key}>
-                <div className="delete-container">
+                <div className="deleteContainer">
                   <p>{listObject.listName}</p>
                   <button onClick={defferedFunction}>
                     <FaTimesCircle />
@@ -152,7 +152,7 @@ function ListModal(props) {
         </ul>
 
         {/* Form for User to add additional List title  */}
-        <form className="addlist-form" action="submit" onSubmit={handleSubmit}>
+        <form className="addListForm" action="submit" onSubmit={handleSubmit}>
           <label className="labelForList" htmlFor="userListChoice">
             Create a new list{" "}
           </label>
