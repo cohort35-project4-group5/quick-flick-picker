@@ -84,3 +84,19 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 1200px) {
+  .searchBox select {
+    margin-top: 10px;
+  }
+  
+  .searchBox {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .searchBox button {
+    margin-top: 10px;
+  }
+}
