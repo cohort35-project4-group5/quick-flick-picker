@@ -1,10 +1,13 @@
 # QuickFlickPix
 
+![quick-flick-pix](https://user-images.githubusercontent.com/49259243/133847128-ebb24662-ec36-49a2-82ac-aa857f935a24.png)
+
 A web application for movie lovers to search for movies and add to their customized movie lists. The app can pick a movie for the user based on their filter choice. (To be expanded with more filter options) 
 
 - [Live Site](https://quickflickpix.netlify.app/)
 
-## Tech Used
+## Tech Used![Uploading quick-flick-pix.png…]()
+
 
 - React
 - SCSS
