@@ -15,7 +15,7 @@ A web application for movie lovers to search for movies and add to their customi
 
 - React with Routing used to create a multi-page app
 - Movie data fetched from RESTful API https://api.themoviedb.org/
-- ReactPlayer used to play movie trailers in Youtube
+- ReactPlayer used to display movie trailers from Youtube
 - Sass used to keep styling files neatly organized and separated into generic styles and partials.
 
 ## Setup Instructions
