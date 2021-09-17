@@ -4,7 +4,7 @@ A web application for movie lovers to search for movies and add to their customi
 
 - [Live Site](https://quickflickpix.netlify.app/)
 
-![quick-flick-pix](https://user-images.githubusercontent.com/49259243/133847128-ebb24662-ec36-49a2-82ac-aa857f935a24.png)
+[![quick-flick-pix](https://user-images.githubusercontent.com/49259243/133847128-ebb24662-ec36-49a2-82ac-aa857f935a24.png)](https://quickflickpix.netlify.app/)
 
 ## Tech Used![Uploading quick-flick-pix.png…]()
 
